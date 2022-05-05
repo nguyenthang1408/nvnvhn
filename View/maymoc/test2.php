@@ -894,12 +894,12 @@ echo "['".$rows["type_leave"]."', ".$rows["type_leave_no"]."],";
 		function drawChart() {
 		var data = google.visualization.arrayToDataTable([
 		['Ngày', 'Đi làm', 'Nghỉ làm'],
-		['Thứ hai',<?php echo $tiledilamthu2; ?>,<?php echo $tilenghilamthu2; ?>],
-		['Thứ ba',<?php echo $tiledilamthu3; ?>,<?php echo $tilenghilamthu3; ?>],
-		['Thứ tư',<?php echo $tiledilamthu4; ?>,<?php echo $tilenghilamthu4; ?>],
-        ['Thứ năm',<?php echo $tiledilamthu5; ?>,<?php echo $tilenghilamthu5; ?>],
-        ['Thứ sáu',<?php echo $tiledilamthu6; ?>,<?php echo $tilenghilamthu6; ?>],
-        ['Thứ bảy',<?php echo $tiledilamthu7; ?>,<?php echo $tilenghilamthu7; ?>],
+		['Thứ hai',<?php echo round($tiledilamthu2,2); ?>,<?php echo round($tilenghilamthu2,2); ?>],
+		['Thứ ba',<?php echo round($tiledilamthu3,2); ?>,<?php echo round($tilenghilamthu3,2); ?>],
+		['Thứ tư',<?php echo round($tiledilamthu4,2); ?>,<?php echo round($tilenghilamthu4,2); ?>],
+        ['Thứ năm',<?php echo round($tiledilamthu5,2); ?>,<?php echo round($tilenghilamthu5,2); ?>],
+        ['Thứ sáu',<?php echo round($tiledilamthu6,2); ?>,<?php echo round($tilenghilamthu6,2); ?>],
+        ['Thứ bảy',<?php echo round($tiledilamthu7,2); ?>,<?php echo round($tilenghilamthu7,2); ?>],
 		
 		
 		]);
