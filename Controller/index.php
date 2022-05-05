@@ -471,6 +471,10 @@ switch ($action) {
 		require_once('../View-cn/maymoc/addchart.php');
 		break;
 	}
+	case 'te':{
+		require_once('../View/maymoc/te.php');
+		break;
+	}
 }
 
 ?>

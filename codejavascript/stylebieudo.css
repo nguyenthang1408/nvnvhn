@@ -1,0 +1,125 @@
+
+.packages .table thead tr{		
+    text-align:center;
+
+}
+.packages .table thead th{
+	font-size: 25px; 
+	border-radius: 20px 20px 0 0;
+	text-align: center;
+	border: 3px solid white;
+}
+.packages .table thead th:nth-child(1){
+	line-height: 100px;
+	background: #D5E0E0;
+	border: none;
+	margin-right: 10px;
+}
+.packages .table thead th:nth-child(2){
+	line-height: 100px;
+	background: #247070;
+}
+.packages .table thead th:nth-child(3){
+	background: #ff9378;
+	line-height: 50px;
+}
+.packages .table thead th:nth-child(4){
+	background: #edc045;
+	line-height: 50px;
+}
+.packages .table thead th:nth-child(5){
+	line-height: 100px;
+	background: #dafa28;
+}
+.packages .table thead th:nth-child(6){
+	line-height: 50px;
+	background:#41f055;
+}
+.packages .table thead th:nth-child(7){
+	line-height: 50px;
+	background:#4fcdf0;
+}
+.packages .table thead th:nth-child(8){
+	line-height: 50px;
+	background: #7868ed;
+}
+.packages .table thead th:nth-child(9){
+	line-height: 100px;
+	background: #D91C97;
+}
+.packages .table thead th:nth-child(10){
+	line-height: 100px;
+	background: #eb6ebb;
+}
+.packages .table thead th:nth-child(11){
+	line-height: 100px;
+	background: #EB090D;
+	border-right: 0px solid white;
+}
+.packages .table tbody tr td{
+	font-size: 20px;
+	height: 0px;
+	border: 3px solid orange;
+	line-height: 40px;
+}
+.packages .table tbody tr td:nth-child(1){
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 100px;
+}
+.packages .table tbody tr td:nth-child(2){
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 100px;
+}
+.packages .table tbody tr td:nth-child(3){
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 100px;
+}
+.packages .table tbody tr td:nth-child(4){
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 100px;
+}
+.packages .table tbody tr td:nth-child(5){
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 100px;
+}
+.packages .table tbody tr td:nth-child(6){
+	line-height: 100px;
+	font-weight: bold;
+}
+.packages .table tbody tr td:nth-child(6) button{
+	font-size: 25px;
+}
+.packages .table tbody tr td:nth-child(7){
+	line-height: 100px;
+}
+.packages .table tbody tr td:nth-child(7) button{
+	font-size: 25px;
+}
+.packages .table tbody tr td:nth-child(8){
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 100px;
+}
+.packages .table tbody tr td:nth-child(9){
+	font-size: 25px;	
+	font-weight: bold;
+	line-height: 100px;
+}
+.packages .table tbody tr td:nth-child(10){
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 100px;
+}
+.packages .table tbody tr td:nth-child(11){
+	font-size: 20px;
+	font-weight: bold;
+}
+
+
+
+

@@ -42,6 +42,7 @@ $databophan5 = $db->getAllDatabophan($table1,$bophan2);
 
 $a = 0;
 $b = 0;
+if($data1 > 0){
 foreach ($data1 as $key) {
     	$datamin = $key['tiendo'];
 		$ch = substr($datamin, 0, -1);
@@ -50,6 +51,9 @@ foreach ($data1 as $key) {
          $a++;
 		}
 }
+}
+if($data2 >0)
+{
 foreach ($data2 as $key) {
     	$datamin = $key['tiendo'];
 		$ch = substr($datamin, 0, -1);
@@ -57,6 +61,7 @@ foreach ($data2 as $key) {
 		{
          $b++;
 		}
+}
 }
 $ab = $a + $b;
 
@@ -184,6 +189,8 @@ $phantramAEC1 = substr($phantramAEC, 0, -1);
 }else{
     $demAEC=0;
     $phantramAEC = 'Không có dữ Liệu';
+    $phantramAEC1 = 0;
+    $tongaec = 0;
 }
 
 if($count_row_TSC!=0)
@@ -200,6 +207,8 @@ $phantramTSC1 = substr($phantramTSC, 0, -1);
 }else{
     $demTSC=0;
     $phantramTSC = 'Không có dữ Liệu';
+    $phantramTSC1 = 0;
+    $tongtsc = 0;
 }
 
 if($count_row_APS!=0)
@@ -214,6 +223,8 @@ $phantramAPS = round(($tongaps/$count_row_APS),2).'%';
 $phantramAPS1 = substr($phantramAPS, 0, -1);
 }else{
     $phantramAPS = 'Không có dữ Liệu';
+    $phantramAPS1 = 0;
+    $tongaps  = 0;
 }
 
 if($count_row_AEC==0){
@@ -225,11 +236,12 @@ if($count_row_TSC==0){
 if($count_row_APS==0){
     $count_row_APS = 0;
 }
-
+if($tongaps >0 || $tongtsc >0 || $tongaec >0)
+{
 $tongg = round(((round(($tongaps/$count_row_APS),2)+round(($tongtsc/$count_row_TSC),2)+round(($tongaec/$count_row_AEC),2))/3),2).'%';
 
 $tonggg = substr($tongg, 0, -1);
-
+}
 ?>
 <?php	
 			$dt = getdate();
@@ -440,14 +452,18 @@ $tonggg = substr($tongg, 0, -1);
 							</div>
 						</article>
 						<article class="tile" id="" style="">
-                  			<h2 class="tileh2" id="tileh2" style="height:170px">
+                  			<h2 class="tileh2" id="tileh2" style="">
 				        		<a href="../Controller/index.php?action=selectaecdata#divtimkiem" style="">AEC</a>
 				        		<div class="pie animate" style="--p:<?php echo round($phantramAEC1); ?>;--c:orange;z-index: 4;margin-top:10px"><?php echo round($phantramAEC1).'%'; ?></div>
 				  			</h2>
 							<span style="font-size: 20px;">Tên Máy</span>
 								<table class="table" style="">
 							  		<tbody class="bodytable">
-							  			<?php foreach ($databophan as $value) { 
+
+							  			<?php 
+							  			if($databophan >0)
+							  			{
+							  			foreach ($databophan as $value) { 
 											$pos = strpos(strtoupper($value['tenmay']), 'LINE'); 
 											if($pos !== false){ 
 							  			?>
@@ -461,14 +477,17 @@ $tonggg = substr($tongg, 0, -1);
 
 												<td style="color: black;border-bottom: none;"><?php echo $value['tiendo']; ?></td>
 											</tr>
-							    		<?php } } ?>
-							    		<?php foreach ($databophan3 as $value) { ?>
+							    		<?php } } }?>
+							    		<?php 
+							    		if($databophan3 > 0)
+							    		{
+							    		foreach ($databophan3 as $value) { ?>
 											<tr>
 												<th  style="border-bottom: none;"> <div style="width: 110px;height: 30px;text-overflow: ellipsis;overflow: hidden; text-align: left;white-space: nowrap;"><a style="color: black;width: 110px;" href="../Controller/index.php?action=bieudoline1&id=<?php echo $value['id']; ?>"> <?php echo $value['tenmay']; ?></a></div> </th>
 
 												<td  style="color: black;border-bottom: none;"><?php echo $value['tiendo']; ?></td>
 											</tr>
-							   			 <?php } ?>
+							   			 <?php } } ?>
 						     	  </tbody>
 						
 							</table>
@@ -483,7 +502,10 @@ $tonggg = substr($tongg, 0, -1);
 							      <span style="font-size: 20px;">Tên Máy</span>
 							<table class="table" style="overflow: scroll;overflow: hidden;">
 							  <tbody>
-							  	<?php foreach ($databophan1 as $value) { 
+							  	<?php 
+							  	if($databophan1 > 0)
+							  	{
+							  	foreach ($databophan1 as $value) { 
                                 $pos = strpos(strtoupper($value['tenmay']), 'LINE'); 
                               if($pos !== false){ 
 							  		?>
@@ -499,15 +521,18 @@ $tonggg = substr($tongg, 0, -1);
 							      <th scope="row" style="color: black;border-bottom: none;"><div style="width: 120px;height: 30px;text-overflow: ellipsis;overflow: hidden; text-align: left;white-space: nowrap;"> <a style="color: black;" href="../Controller/index.php?action=bieudo&id=<?php echo $value['id']; ?>"> <?php echo $value['tenmay'] ?></a></th>
 							      <td style="color: black;border-bottom: none;"><?php echo $value['tiendo']; ?></div></td>
 							    </tr>
-							    <?php } } ?>
+							    <?php } } }?>
 
-							    	<?php foreach ($databophan4 as $value) { ?>
+							    	<?php 
+							    	if($databophan4 > 0)
+							    	{
+							    	foreach ($databophan4 as $value) { ?>
 
 							    <tr>
 							      <th scope="row" style="color: black;border-bottom: none;"><div style="width: 120px;height: 30px;text-overflow: ellipsis;overflow: hidden; text-align: left;white-space: nowrap;"><a style="color: black;" href="../Controller/index.php?action=bieudoline1&id=<?php echo $value['id']; ?>"> <?php echo $value['tenmay'] ?></a></div></th>
 							      <td style="color: black;border-bottom: none;"><?php echo $value['tiendo']; ?></td>
 							    </tr>
-							    <?php } ?>
+							    <?php } } ?>
 
 							  </tbody>
 							</table>
@@ -521,7 +546,10 @@ $tonggg = substr($tongg, 0, -1);
 							      <span style="font-size: 20px;">Tên Máy</span>
 							<table class="table" style="overflow: scroll;overflow: hidden;">
 								<tbody>
-									<?php foreach ($databophan2 as $value) { 
+									<?php 
+									if($databophan2 > 0)
+									{
+									foreach ($databophan2 as $value) { 
 										$pos = strpos(strtoupper($value['tenmay']), 'LINE'); 
 										if($pos !== false){ 
 									?>
@@ -534,13 +562,16 @@ $tonggg = substr($tongg, 0, -1);
 										<th scope="row" style="color: black;border-bottom: none;"><div style="width: 120px;height: 30px;text-overflow: ellipsis;overflow: hidden; text-align: left;white-space: nowrap;"><a style="color: black;border-bottom: none;" href="../Controller/index.php?action=bieudo&id=<?php echo $value['id']; ?>"> <?php echo $value['tenmay'] ?></a></div></th>
 										<td style="color:black;border-bottom: none;"><?php echo $value['tiendo']; ?></td>
 									</tr>
-									<?php } } ?>
-									<?php foreach ($databophan5 as $value) { ?>
+									<?php } } }?>
+									<?php 
+									if($databophan5 > 0)
+									{
+									foreach ($databophan5 as $value) { ?>
 										<tr>
 											<th scope="row" style="color: black;border-bottom: none;"><div style="width: 120px;height: 30px;text-overflow: ellipsis;overflow: hidden; text-align: left;white-space: nowrap;"><a style="color: black;width: 120px;" href="../Controller/index.php?action=bieudoline1&id=<?php echo $value['id']; ?>"> <?php echo $value['tenmay'] ?></a></div></th>
 											<td style="color:black;border-bottom: none;"><?php echo $value['tiendo']; ?></td>
 										</tr>
-									<?php } ?>
+									<?php } } ?>
 								</tbody>
 							</table>
 					</article>

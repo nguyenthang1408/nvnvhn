@@ -155,6 +155,32 @@
             }
             return $data;
          }
+         public function getDataTimeTungNguoi($table,$mathe,$nguoithuchien,$tenmay,$ngaybatdau,$ngaydukien)
+         {
+            $sql = "SELECT max(tungnguoi) as tungnguoi FROM $table WHERE mathe = '$mathe' and nguoithuchien = '$nguoithuchien' and tenmay = '$tenmay' and ngaybatdau = '$ngaybatdau' and ngaydukien = '$ngaydukien'";
+            $this->execute($sql);
+            if($this->num_row()!=0)
+            {
+               $data = mysqli_fetch_array($this->result);
+            }
+            else{
+               $data= 0;
+            }
+            return $data;
+         }
+         public function getDataTimeHoanThanh($table,$mathe,$nguoithuchien,$tenmay,$ngaybatdau,$ngaydukien)
+         {
+            $sql = "SELECT max(hoanthanh) as hoanthanh FROM $table WHERE mathe = '$mathe' and nguoithuchien = '$nguoithuchien' and tenmay = '$tenmay' and ngaybatdau = '$ngaybatdau' and ngaydukien = '$ngaydukien'";
+            $this->execute($sql);
+            if($this->num_row()!=0)
+            {
+               $data = mysqli_fetch_array($this->result);
+            }
+            else{
+               $data= 0;
+            }
+            return $data;
+         }
 
          public function getDataLineMayMoc($table,$tenline,$bophan)
          {
@@ -229,6 +255,17 @@
          public function Insert($line)
          {
             $sql = "SELECT * from anh where em = '$line'";
+             return $this->execute($sql);
+         }
+         //---------
+         public function InsertTimeHoanThanh($table,$tenmay,$ngaybatdau,$ngaydukien,$hoanthanh,$mathe)
+         {
+            $sql = "INSERT INTO $table(tenmay,ngaybatdau,ngaydukien,hoanthanh,mathe) VALUES('$tenmay','$ngaybatdau','$ngaydukien','$hoanthanh','$mathe')";
+             return $this->execute($sql);
+         }
+          public function InsertTime($table,$tenmay,$ngaybatdau,$ngaydukien,$tonggio,$tungnguoi,$hoanthanh,$phantram,$tangca,$mathe,$nguoithuchien)
+         {
+            $sql = "INSERT INTO $table(tenmay,ngaybatdau,ngaydukien,tonggio,tungnguoi,hoanthanh,phantram,tangca,mathe,nguoithuchien) VALUES('$tenmay','$ngaybatdau','$ngaydukien','$tonggio','$tungnguoi','$hoanthanh','$phantram','$tangca','$mathe','$nguoithuchien')";
              return $this->execute($sql);
          }
          public function InsertHieuSuat($table,$mathe,$hieusuat,$tenmay,$ngaybatdau)

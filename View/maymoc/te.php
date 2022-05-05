@@ -300,6 +300,8 @@ foreach ($matkhau as $keyy) {
     <script type="text/javascript" src="../canvasjs/canvasjs.react.js"></script>
     <link rel="stylesheet" type="text/css" href="../bootstrap-5/css/bootstrap.min.css">
     <script type="text/javascript" src="../canvasjs/jquery.canvasjs.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../codejavascript/stylebieudo.css">
+   <script src="../codejavascript/jq1.js"></script>
     <title>VN cable 自動化</title>
 <script>
 window.onload = function () {
@@ -313,21 +315,21 @@ var chart = new CanvasJS.Chart("chartContainer", {
          fontFamily: "Times New Roman",
          fontSize: 50,
          // fontWeight: "bold",
-        text: "Biểu đồ tiến độ <?php echo $datatiendo1['tenmay'];  ?>"
+        text: "工作進度表 <?php echo $datatiendo1['tenmay'];  ?>"
 
     },
     toolTip: {
         shared: true
     },
     axisX: {
-        title: "Tên Máy",
+        title: "日月年",
         crosshair: {
             enabled: true,
             snapToDataPoint: true
         }
     },
     axisY: {
-        title: "Phần Trăm(%)",
+        title: "進度(%)",
         minimum: 1,
         maximum: 100,
         titleFontColor: "#4F81BC",
@@ -338,7 +340,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
         }
     },
     axisY2: {
-        title: "Thời Gian",
+        title: "时间",
          valueFormatString: "D-MM-YYYY",
         titleFontColor: "#C0504E",
         lineColor: "#C0504E",
@@ -375,7 +377,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
     {
         type: "spline",  
         axisYType: "secondary",
-        name: "Thời Gian",
+        name: "时间",
         dataPoints: [
              { label: "<?php echo $datatiendo1['may1']; ?>", y: "<?php echo $datatiendo1['ngaybatdau']; ?><?php echo " -> ".$datatiendo2['ngaydukien']; ?>" },
             { label: "<?php echo $datatiendo1['may2']; ?>", y: "<?php echo $datatiendo1['ngaybatdau']; ?><?php echo " -> ".$datatiendo2['ngaydukien']; ?>"},
@@ -397,11 +399,8 @@ chart.render();
   <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-   <link rel="stylesheet" type="text/css" href="../codejavascript/stylebieudo.css">
-   <script src="../codejavascript/jq1.js"></script>
    <style type="text/css">
-
-       .progress{
+     .progress{
         border-radius: 50px;
         height:3vh;
         box-sizing: content-box;
@@ -517,11 +516,11 @@ chart.render();
       }
       .tiendo{
         display: grid;
-        width: 100vw;
+        width: 99vw;
         height: 170px;
         grid-template-columns: repeat(10, 1fr);
         column-gap: 1.6rem;
-        /*grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 9%;*/
+        grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 9%;
         row-gap: 2rem;
         margin-top: 0.5rem;
         justify-items: center;
@@ -1120,14 +1119,13 @@ body {
 </head>
 <body>
 
-    <section class="packages" id="packages">
+  <section class="packages" id="packages">
 
     <div style="width: 100%;height: 70px;position: fixed;">
         <h2><a href="../Controller/index.php?action=test2-cn#book" style="font-size: 25px;" class="btn btn-success">菜單</a></h2>
         
        
     </div>
-
 
 
     <div class="canvas">
@@ -1182,13 +1180,6 @@ body {
             <h1>LOADING</h1>
         </div>
 
-<!--      <div class="box-container" style="">
-        <div id="chartContainer" style="height: 400px; width: 100%;"></div>
-     </div>
-
-    <div>
-      <img src="../image/gif.gif" border="0" alt="Photobucket" height="200" width="250" id="ani" style="position: relative;top:-20px;z-index: -1;--g: <?php echo $tong-5; ?>vw;">
-    </div> -->
      
     <div style="width: 99vw;margin-top: 30px;">
       <div class="progress" style="">
@@ -1198,10 +1189,9 @@ body {
       </div>    
     </div>
 
-
-  <div class="tiendo" style="width: 100vw;" >
-
-     <div style="" class="dfm">
+     <div class="tiendo" >
+     
+        <div style="" class="dfm">
       <h5 style="font-weight: bold;">
         <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[1]; ?>" style="text-decoration:none;">
             <div class="green" id="green1">
@@ -1236,8 +1226,8 @@ body {
 
         <div style="" class="to2d">
               <h5 style="font-weight: bold;">
-                <a href="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[2]; ?>" style="text-decoration:none;">
-                    
+                <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[2]; ?>" style="text-decoration:none;">
+                    </a>
 
                     <div class="green" id="green2">
                     <div class="progress1" id="progress2">
@@ -1260,8 +1250,6 @@ body {
             ?>
           <span><input type="hidden" id="percent-box2" value="<?php 
             echo $ch3; ?>">
-         </span>
-                    </a>
                 </h5>
                 <div style="width: 7vw;text-align: center;">
              <span style="font-weight:bold;font-size:20px;text-align:center;"><?php echo $datatiendo1['may2']; ?></span>
@@ -1270,7 +1258,7 @@ body {
 
         <div style="" class="giacongvadathang">
          <h5 style="font-weight: bold;"> 
-          <a href="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[3]; ?>" style="text-decoration:none;">
+          <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[3]; ?>" style="text-decoration:none;">
             <div class="green" id="green3">
             <div class="progress1" id="progress3">
               <div class="inner" id="inner3">
@@ -1300,7 +1288,7 @@ body {
       </div>
       <div style="" class="lapdatvachinhmay">
       <h5 style="font-weight: bold;"> 
-        <a href="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[4]; ?>" style="text-decoration:none;">
+        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[4]; ?>" style="text-decoration:none;">
             <div class="green" id="green4">
             <div class="progress1" id="progress4">
               <div class="inner">
@@ -1330,7 +1318,7 @@ body {
     </div>
     <div style="" class="buyoff">
       <h5 style="font-weight: bold;">
-        <a href="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[5]; ?>" style="text-decoration:none;">
+        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[5]; ?>" style="text-decoration:none;">
             <div class="green" id="green5">
             <div class="progress1" id="progress5">
               <div class="inner" id="inner5">
@@ -1360,7 +1348,7 @@ body {
     </div>
     <div style="" class="buyoff">
       <h5 style="font-weight: bold;">
-        <a href="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[6]; ?>" style="text-decoration:none;">
+        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[6]; ?>" style="text-decoration:none;">
             <div class="green" id="green6">
             <div class="progress1" id="progress6">
               <div class="inner" id="inner6">
@@ -1392,7 +1380,7 @@ body {
 
     <div style="" class="buyoff">
       <h5 style="font-weight: bold;">
-        <a href="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[7]; ?>" style="text-decoration:none;">
+        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[7]; ?>" style="text-decoration:none;">
             <div class="green" id="green7">
             <div class="progress1" id="progress7">
               <div class="inner" id="inner7">
@@ -1424,7 +1412,7 @@ body {
 
     <div style="" class="buyoff">
       <h5 style="font-weight: bold;">
-        <a href="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[8]; ?>" style="text-decoration:none;">
+        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[8]; ?>" style="text-decoration:none;">
             <div class="green" id="green8">
             <div class="progress1" id="progress8">
               <div class="inner" id="inner8">
@@ -1456,7 +1444,7 @@ body {
 
     <div style="" class="buyoff">
       <h5 style="font-weight: bold;">
-        <a href="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[9]; ?>" style="text-decoration:none;">
+        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[9]; ?>" style="text-decoration:none;">
             <div class="green" id="green9">
             <div class="progress1" id="progress9">
               <div class="inner" id="inner9">
@@ -1490,7 +1478,7 @@ body {
 
     <div style="" class="buyoff">
       <h5 style="font-weight: bold;">
-        <a href="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[10]; ?>" style="text-decoration:none;">
+        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[10]; ?>" style="text-decoration:none;">
             <div class="green" id="green10">
             <div class="progress1" id="progress10">
               <div class="inner" id="inner10">
@@ -1517,205 +1505,14 @@ body {
         <div style="width: 7vw;text-align: center;">
              <span style="font-weight:bold;font-size:20px;text-align:center;"><?php echo $datatiendo1['may10']; ?></span>
          </div>
-    </div>
-    
+
+     </div>
 
 
-   <!--   <div style="" class="dfm">
-      <h5 style="font-weight: bold;">
-        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[1]; ?>" style="text-decoration:none;">
-            <?php echo $datatiendo1['may1']; ?> <br> 
-            <span style="color:red;font-weight:bold;">
-            <?php $count = 0;
-              $arraymay1 = array();
-              $a = 0;
-              foreach ($bophanline as $key1) {
-                $count++;
-                $a++;
-                $arraymay1[$a] = $key1['tiendo'];
-            }
-            echo $arraymay1[1];
-            ?>       
-              </span>
-        </a>
-      </h5>
-     </div>
-     <div style="" class="to2d">
-      <h5 style="font-weight: bold;">
-        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[2]; ?>" style="text-decoration:none;">
-            <?php echo $datatiendo1['may2']; ?> <br> 
-            <span style="color:red;font-weight:bold;">
-            <?php $count = 0;
-              $arraymay1 = array();
-              $a = 0;
-              foreach ($bophanline as $key1) {
-                $count++;
-                $a++;
-                $arraymay1[$a] = $key1['tiendo'];
-            }
-            echo $arraymay1[2];
-            ?>       
-              </span>
-        </a>
-     </h5>
-     </div>
-     <div style="" class="giacongvadathang">
-      <h5 style="font-weight: bold;"> 
-        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[3]; ?>" style="text-decoration:none;">
-            <?php echo $datatiendo1['may3']; ?> <br> 
-            <span style="color:red;font-weight:bold;">
-            <?php $count = 0;
-              $arraymay1 = array();
-              $a = 0;
-              foreach ($bophanline as $key1) {
-                $count++;
-                $a++;
-                $arraymay1[$a] = $key1['tiendo'];
-            }
-            echo $arraymay1[3];
-            ?>       
-              </span>
-        </a>
-     </h5>
-     </div>
-     <div style="" class="lapdatvachinhmay">
-      <h5 style="font-weight: bold;"> 
-        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[4]; ?>" style="text-decoration:none;">
-            <?php echo $datatiendo1['may4']; ?> <br> 
-            <span style="color:red;font-weight:bold;">
-            <?php $count = 0;
-              $arraymay1 = array();
-              $a = 0;
-              foreach ($bophanline as $key1) {
-                $count++;
-                $a++;
-                $arraymay1[$a] = $key1['tiendo'];
-            }
-            echo $arraymay1[4];
-            ?>       
-              </span>
-        </a>
-      </h5>
-     </div>
-     <div style="" class="buyoff">
-      <h5 style="font-weight: bold;">
-        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[5]; ?>" style="text-decoration:none;">
-            <?php echo $datatiendo1['may5']; ?> <br> 
-            <span style="color:red;font-weight:bold;">
-            <?php $count = 0;
-              $arraymay1 = array();
-              $a = 0;
-              foreach ($bophanline as $key1) {
-                $count++;
-                $a++;
-                $arraymay1[$a] = $key1['tiendo'];
-            }
-            echo $arraymay1[5];
-            ?>       
-              </span>
-        </a>
-      </h5>
-     </div>
-     <div style="" class="dfm">
-      <h5 style="font-weight: bold;">
-        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[6]; ?>" style="text-decoration:none;">
-            <?php echo $datatiendo1['may6']; ?> <br> 
-            <span style="color:red;font-weight:bold;">
-            <?php $count = 0;
-              $arraymay1 = array();
-              $a = 0;
-              foreach ($bophanline as $key1) {
-                $count++;
-                $a++;
-                $arraymay1[$a] = $key1['tiendo'];
-            }
-            echo $arraymay1[6];
-            ?>       
-              </span>
-        </a>
-      </h5>
-     </div>
-     <div style="" class="to2d">
-      <h5 style="font-weight: bold;"> 
-        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[7]; ?>" style="text-decoration:none;">
-            <?php echo $datatiendo1['may7']; ?> <br> 
-            <span style="color:red;font-weight:bold;">
-            <?php $count = 0;
-              $arraymay1 = array();
-              $a = 0;
-              foreach ($bophanline as $key1) {
-                $count++;
-                $a++;
-                $arraymay1[$a] = $key1['tiendo'];
-            }
-            echo $arraymay1[7];
-            ?>       
-              </span>
-        </a>
-     </h5>
-     </div>
-     <div style="" class="giacongvadathang">
-      <h5 style="font-weight: bold;">
-        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[8]; ?>" style="text-decoration:none;">
-            <?php echo $datatiendo1['may8']; ?> <br> 
-            <span style="color:red;font-weight:bold;">
-            <?php $count = 0;
-              $arraymay1 = array();
-              $a = 0;
-              foreach ($bophanline as $key1) {
-                $count++;
-                $a++;
-                $arraymay1[$a] = $key1['tiendo'];
-            }
-            echo $arraymay1[8];
-            ?>       
-              </span>
-        </a>
-     </h5>
-     </div>
-     <div style="" class="lapdatvachinhmay">
-      <h5 style="font-weight: bold;">
-        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[9]; ?>" style="text-decoration:none;">
-            <?php echo $datatiendo1['may9']; ?> <br> 
-            <span style="color:red;font-weight:bold;">
-            <?php $count = 0;
-              $arraymay1 = array();
-              $a = 0;
-              foreach ($bophanline as $key1) {
-                $count++;
-                $a++;
-                $arraymay1[$a] = $key1['tiendo'];
-            }
-            echo $arraymay1[9];
-            ?>       
-              </span>
-        </a>
-      </h5>
-     </div>
-     <div style="" class="buyoff">
-      <h5 style="font-weight: bold;"> 
-        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[10]; ?>" style="text-decoration:none;">
-            <?php echo $datatiendo1['may10']; ?> <br> 
-            <span style="color:red;font-weight:bold;">
-            <?php $count = 0;
-              $arraymay1 = array();
-              $a = 0;
-              foreach ($bophanline as $key1) {
-                $count++;
-                $a++;
-                $arraymay1[$a] = $key1['tiendo'];
-            }
-            echo $arraymay1[10];
-            ?>       
-              </span>
-        </a>
-      </h5>
-     </div> -->
-
-</div>
       <div style="width: 100vw;">
-       <!--  <div style="">
-            <h2 style="text-align: center;">Chi Tiết 進度 <?php echo $datatiendo1['tenmay'];  ?></h2>
+
+        <!-- <div style="">
+            <h2 style="text-align: center;">進度 <?php echo $datatiendo1['tenmay'];  ?></h2>
         </div>
         
          <table style="margin-top: 1%;width: 100%;" class="table">
@@ -1742,12 +1539,12 @@ body {
                           foreach ($bophanline as $key1) {
                             $count++;
                           ?>
-                          <td style="border: 1px solid"><a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[$count]; ?>" class="btn btn-primary may<?php echo $count; ?>" data-bs-whatever="Máy <?php echo $count; ?>"><?php echo $key1['tiendo'];  ?></a></td>
+                          <td style="border: 1px solid"><a href="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[$count]; ?>" class="btn btn-primary may<?php echo $count; ?>" data-bs-whatever="Máy <?php echo $count; ?>"><?php echo $key1['tiendo'];  ?></a></td>
                           <?php } ?>
                           <td ></td>
                         </tr>
                          <tr style="background: #9BC86A;text-align:center;line-height: 50px;">
-                          <th style="border: 1px solid;font-size: 20px;">進度 Tổng</th>
+                          <th style="border: 1px solid;font-size: 20px;">總進度</th>
                           <td style="border: 1px solid;font-size: 20px;"><?php echo $tong1.'%'; ?></td>
                           <td style="border: 1px solid;font-size: 20px;"><?php echo $tong2.'%'; ?></td>
                           <td style="border: 1px solid;font-size: 20px;"><?php echo $tong3.'%'; ?></td>
@@ -1761,9 +1558,11 @@ body {
                           <td style="border: 1px solid;font-size: 20px;"><button class="btn btn-danger"><?php echo $tong.'%'; ?></button></td>
                         </tr>
                       </tbody>
-         </table> 
- -->
-        <div style="margin: 0 30px;height: 100vw;height: 35vh; box-shadow:7px 7px 15px rgba(121, 130, 160, 0.747);padding:30px;margin-top: 2%;border-radius: 30px;background: white;">
+         </table>  -->
+
+
+
+<div style="margin: 0 30px;height: 100vw;height: 49vh; box-shadow:7px 7px 15px rgba(121, 130, 160, 0.747);padding:30px;margin-top: 2%;border-radius: 30px;background: white;">
                 <table class="table" style="">
               <thead>
                 <tr>
@@ -1773,7 +1572,7 @@ body {
                     <th style="line-height: 100px;" class="col-1">預期日期</th>
                     <th style="" class="col-1">时间</th>
                     <th style="line-height: 100px;" class="col-1">部門</th>
-                    <!-- <th style="line-height: 100px;" class="col-1">成員</th> -->
+                    <th style="line-height: 100px;" class="col-1">成員</th>
                 </tr>
               </thead>
            <tbody>
@@ -1796,8 +1595,8 @@ body {
                 
 
 
-                <td style='font-weight: bold;'><?php echo $dataID['bophan']; ?></td>
-                <!-- <td style=''><?php echo $dataID['nhomthuchien']; ?></td> -->
+                <td style=''><?php echo $dataID['bophan']; ?></td>
+                <td style=''><?php echo $dataID['nhomthuchien']; ?></td>
 
 
 
@@ -1818,7 +1617,10 @@ body {
             </tbody>
         </table>
           </div>
-            
+
+
+        
+         
             </div>
 </section>
 </body>
@@ -1895,7 +1697,7 @@ body {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">進度 <?php echo $datatiendo1['may1']; ?></h5>
+        <h5 class="modal-title" id="exampleModalLabel">入密碼 <?php echo $datatiendo1['may1']; ?></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -1917,7 +1719,7 @@ body {
       </div>
       <div class="modal-footer">
         <span class="btn btn-primary" id="submitmay11" name="submitmay11">確認</span>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
         <button type="submit" class="btn btn-primary" id="submitmay1" name="submitmay1" style="display: none;">確認</button>
       </div>
     </div>
@@ -1930,7 +1732,7 @@ body {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">進度 <?php echo $datatiendo1['may2']; ?></h5>
+        <h5 class="modal-title" id="exampleModalLabel">入密碼 <?php echo $datatiendo1['may2']; ?></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -1951,7 +1753,7 @@ body {
       </div>
       <div class="modal-footer">
         <span class="btn btn-primary" id="submitmay12" name="submitmay12">確認</span>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
     
         <button type="submit" class="btn btn-primary" id="submitmay2" name="submitmay2"style="display: none;">確認</button>
       </div>
@@ -1966,7 +1768,7 @@ body {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">進度 <?php echo $datatiendo1['may3']; ?></h5>
+        <h5 class="modal-title" id="exampleModalLabel">入密碼 <?php echo $datatiendo1['may3']; ?></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -1987,7 +1789,7 @@ body {
       </div>
       <div class="modal-footer">
         <span class="btn btn-primary" id="submitmay13" name="submitmay13">確認</span>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
     
         <button type="submit" class="btn btn-primary" id="submitmay3" name="submitmay3"style="display: none;">確認</button>
       </div>
@@ -2002,7 +1804,7 @@ body {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">進度 <?php echo $datatiendo1['may4']; ?></h5>
+        <h5 class="modal-title" id="exampleModalLabel">入密碼 <?php echo $datatiendo1['may4']; ?></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -2023,7 +1825,7 @@ body {
       </div>
       <div class="modal-footer">
         <span class="btn btn-primary" id="submitmay14" name="submitmay14">確認</span>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
     
         <button type="submit" class="btn btn-primary" id="submitmay4" name="submitmay4"style="display: none;">確認</button>
       </div>
@@ -2040,7 +1842,7 @@ body {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">進度 <?php echo $datatiendo1['may5']; ?></h5>
+        <h5 class="modal-title" id="exampleModalLabel">入密碼 <?php echo $datatiendo1['may5']; ?></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -2061,7 +1863,7 @@ body {
       </div>
       <div class="modal-footer">
         <span class="btn btn-primary" id="submitmay15" name="submitmay15">確認</span>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
     
         <button type="submit" class="btn btn-primary" id="submitmay5" name="submitmay5"style="display: none;">確認</button>
       </div>
@@ -2077,7 +1879,7 @@ body {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">進度 <?php echo $datatiendo1['may6']; ?></h5>
+        <h5 class="modal-title" id="exampleModalLabel">入密碼 <?php echo $datatiendo1['may6']; ?></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -2098,7 +1900,7 @@ body {
       </div>
       <div class="modal-footer">
         <span class="btn btn-primary" id="submitmay16" name="submitmay16">確認</span>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
     
         <button type="submit" class="btn btn-primary" id="submitmay6" name="submitmay6"style="display: none;">確認</button>
       </div>
@@ -2114,7 +1916,7 @@ body {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">進度 <?php echo $datatiendo1['may7']; ?></h5>
+        <h5 class="modal-title" id="exampleModalLabel">入密碼 <?php echo $datatiendo1['may7']; ?></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -2135,7 +1937,7 @@ body {
       </div>
       <div class="modal-footer">
         <span class="btn btn-primary" id="submitmay17" name="submitmay17">確認</span>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
     
         <button type="submit" class="btn btn-primary" id="submitmay7" name="submitmay7"style="display: none;">確認</button>
       </div>
@@ -2151,7 +1953,7 @@ body {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">進度 <?php echo $datatiendo1['may8']; ?></h5>
+        <h5 class="modal-title" id="exampleModalLabel">入密碼 <?php echo $datatiendo1['may8']; ?></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -2172,7 +1974,7 @@ body {
       </div>
       <div class="modal-footer">
         <span class="btn btn-primary" id="submitmay18" name="submitmay18">確認</span>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
     
         <button type="submit" class="btn btn-primary" id="submitmay8" name="submitmay8"style="display: none;">確認</button>
       </div>
@@ -2188,7 +1990,7 @@ body {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">進度 <?php echo $datatiendo1['may9']; ?></h5>
+        <h5 class="modal-title" id="exampleModalLabel">入密碼 <?php echo $datatiendo1['may9']; ?></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -2209,7 +2011,7 @@ body {
       </div>
       <div class="modal-footer">
         <span class="btn btn-primary" id="submitmay19" name="submitmay19">確認</span>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
     
         <button type="submit" class="btn btn-primary" id="submitmay9" name="submitmay9"style="display: none;">確認</button>
       </div>
@@ -2224,7 +2026,7 @@ body {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">進度 <?php echo $datatiendo1['may10']; ?></h5>
+        <h5 class="modal-title" id="exampleModalLabel">入密碼 <?php echo $datatiendo1['may10']; ?></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -2245,7 +2047,7 @@ body {
       </div>
       <div class="modal-footer">
         <span class="btn btn-primary" id="submitmay110" name="submitmay110">確認</span>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
     
         <button type="submit" class="btn btn-primary" id="submitmay10" name="submitmay10"style="display: none;">確認</button>
       </div>
@@ -2253,8 +2055,6 @@ body {
   </div>
 </div>
 </form>
-
-
 
 
 <script type="text/javascript">
@@ -2605,7 +2405,7 @@ $(function()
 
 
 
-    </script>
+  </script>
  
 
 
@@ -2855,6 +2655,7 @@ $(function()
 
 
 
+
 <script type="text/javascript">
     document.getElementById("submitmay11").addEventListener("click", myFunction);
 
@@ -2862,7 +2663,7 @@ function myFunction() {
   var x = document.getElementById("idmatkhau");
   x.value = x.value.toUpperCase();
   if((x.value == '<?php echo $matkhau1[1]; ?>')){
-      window.location="../Controller/index.php?action=bieudoline1&id=<?php echo $c[1]; ?>";
+      window.location="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[1]; ?>";
   }else{
      
     document.getElementById("idmatkhau").classList.add("form-control");
@@ -2880,7 +2681,7 @@ function myFunction() {
   var x = document.getElementById("idmatkhau22");
   x.value = x.value.toUpperCase();
   if((x.value == '<?php echo $matkhau1[1]; ?>')){
-      window.location="../Controller/index.php?action=bieudoline1&id=<?php echo $c[2]; ?>";
+      window.location="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[2]; ?>";
   }else{
      
     document.getElementById("idmatkhau22").classList.add("form-control");
@@ -2899,7 +2700,7 @@ function myFunction() {
   var x = document.getElementById("idmatkhau33");
   x.value = x.value.toUpperCase();
   if((x.value == '<?php echo $matkhau1[1]; ?>')){
-     window.location="../Controller/index.php?action=bieudoline1&id=<?php echo $c[3]; ?>";
+     window.location="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[3]; ?>";
   }else{
      
     document.getElementById("idmatkhau33").classList.add("form-control");
@@ -2918,7 +2719,7 @@ function myFunction() {
   var x = document.getElementById("idmatkhau4");
   x.value = x.value.toUpperCase();
   if((x.value == '<?php echo $matkhau1[1]; ?>')){
-      window.location="../Controller/index.php?action=bieudoline1&id=<?php echo $c[4]; ?>";
+      window.location="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[4]; ?>";
   }else{
      
     document.getElementById("idmatkhau4").classList.add("form-control");
@@ -2937,7 +2738,7 @@ function myFunction() {
   var x = document.getElementById("idmatkhau5");
   x.value = x.value.toUpperCase();
   if((x.value == '<?php echo $matkhau1[1]; ?>')){
-      window.location="../Controller/index.php?action=bieudoline1&id=<?php echo $c[5]; ?>";
+      window.location="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[5]; ?>";
   }else{
      
     document.getElementById("idmatkhau5").classList.add("form-control");
@@ -2956,7 +2757,7 @@ function myFunction() {
   var x = document.getElementById("idmatkhau6");
   x.value = x.value.toUpperCase();
   if((x.value == '<?php echo $matkhau1[1]; ?>')){
-      window.location="../Controller/index.php?action=bieudoline1&id=<?php echo $c[6]; ?>";
+      window.location="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[6]; ?>";
   }else{
      
     document.getElementById("idmatkhau6").classList.add("form-control");
@@ -2975,7 +2776,7 @@ function myFunction() {
   var x = document.getElementById("idmatkhau7");
   x.value = x.value.toUpperCase();
   if((x.value == '<?php echo $matkhau1[1]; ?>')){
-     window.location="../Controller/index.php?action=bieudoline1&id=<?php echo $c[7]; ?>";
+     window.location="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[7]; ?>";
   }else{
      
     document.getElementById("idmatkhau7").classList.add("form-control");
@@ -2994,7 +2795,7 @@ function myFunction() {
   var x = document.getElementById("idmatkhau8");
   x.value = x.value.toUpperCase();
   if((x.value == '<?php echo $matkhau1[1]; ?>')){
-      window.location="../Controller/index.php?action=bieudoline1&id=<?php echo $c[8]; ?>";
+      window.location="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[8]; ?>";
   }else{
      
     document.getElementById("idmatkhau8").classList.add("form-control");
@@ -3013,7 +2814,7 @@ function myFunction() {
   var x = document.getElementById("idmatkhau9");
   x.value = x.value.toUpperCase();
   if((x.value == '<?php echo $matkhau1[1]; ?>')){
-      window.location="../Controller/index.php?action=bieudoline1&id=<?php echo $c[9]; ?>";
+      window.location="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[9]; ?>";
   }else{
      
     document.getElementById("idmatkhau9").classList.add("form-control");
@@ -3032,7 +2833,7 @@ function myFunction() {
   var x = document.getElementById("idmatkhau10");
   x.value = x.value.toUpperCase();
   if((x.value == '<?php echo $matkhau1[1]; ?>')){
-      window.location="../Controller/index.php?action=bieudoline1&id=<?php echo $c[10]; ?>";
+      window.location="../Controller/index.php?action=bieudoline1-cn&id=<?php echo $c[10]; ?>";
   }else{
      
     document.getElementById("idmatkhau10").classList.add("form-control");
@@ -3053,7 +2854,7 @@ function myFunction() {
      var y = document.getElementById("span2");
   x.value = x.value.toUpperCase();
     if(x.value == '<?php echo $matkhau1[1]; ?>'){
-        window.location="../Controller/index.php?action=edit&id=<?php echo $dataID['id']; ?>";
+        window.location="../Controller/index.php?action=edit-cn&id=<?php echo $dataID['id']; ?>";
     }else{
       document.getElementById("idmatkhau2").classList.add("is-invalid");
       document.getElementById("span2").innerText = '號碼号码不正确'
@@ -3075,7 +2876,7 @@ function myFunction() {
      var y = document.getElementById("span3");
   x.value = x.value.toUpperCase();
     if(x.value == '<?php echo $matkhau1[1]; ?>'){
-        window.location="../Controller/index.php?action=delete&id=<?php echo $dataID['id']; ?>";
+        window.location="../Controller/index.php?action=delete-cn&id=<?php echo $dataID['id']; ?>";
     }else{
       document.getElementById("idmatkhau3").classList.add("is-invalid");
       document.getElementById("span3").innerText = '號碼号码不正确'
@@ -3088,9 +2889,7 @@ function myFunction() {
 </script>
 
 
-
-
-        <script type="text/javascript">
+       <script type="text/javascript">
           //For adding dots to loading
 window.onload = function(){
     var loading = document.getElementById("loading");
@@ -3131,6 +2930,7 @@ window.onload = function(){
 }
 
         </script>
+
 
 
 </body>

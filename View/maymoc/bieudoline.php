@@ -397,11 +397,13 @@ chart.render();
   <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="../codejavascript/stylebieudo.css">
+   <script src="../codejavascript/jq1.js"></script>
    <style type="text/css">
 
        .progress{
         border-radius: 50px;
-        height:5vh;
+        height:3vh;
         box-sizing: content-box;
         position: relative;
         background: #555;
@@ -422,6 +424,7 @@ chart.render();
        .progress-bar > span {
           display: block;
           height: 100%;
+          line-height: 3vh;
           border-top-right-radius: 8px;
           border-bottom-right-radius: 8px;
           border-top-left-radius: 20px;
@@ -514,125 +517,680 @@ chart.render();
       }
       .tiendo{
         display: grid;
-        width: 89vw;
+        width: 100vw;
         height: 170px;
         grid-template-columns: repeat(10, 1fr);
         column-gap: 1.6rem;
-        grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 9%;
+        /*grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 9%;*/
         row-gap: 2rem;
         margin-top: 0.5rem;
         justify-items: center;
       }
       .dfm{
-         width: 150px;
-         height: 120px;
-         border-radius: 50%;
-         overflow: hidden;
-         text-align: center;
-         display: flex;
          cursor: pointer;
-         justify-content: center;
-         align-items: center;
-         border: 3px solid #333;
-         background: #add8e6;
-         box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  -moz-box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  -webkit-box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  -o-box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  border-radius:100px;
       }
       .to2d{
-        width: 150px;
-         height: 120px;
-         border-radius: 50%;
-         overflow: hidden;
-         text-align: center;
-         display: flex;
          cursor: pointer;
-         justify-content: center;
-         align-items: center;
-         border: 3px solid #333;
-         background: #add8e6;
-         box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  -moz-box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  -webkit-box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  -o-box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  border-radius:100px;
       }
       .giacongvadathang{
-         width: 150px;
-         height: 120px;
-         border-radius: 50%;
-         overflow: hidden;
-         text-align: center;
-         display: flex;
-         justify-content: center;
          cursor: pointer;
-         align-items: center;
-         border: 3px solid #333;
-         background: #add8e6;
-         box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  -moz-box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  -webkit-box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  -o-box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  border-radius:100px;
       }
       .lapdatvachinhmay{
-         width: 150px;
-         height: 120px;
-         border-radius: 50%;
-         overflow: hidden;
-         text-align: center;
-         display: flex;
-         justify-content: center;
          cursor: pointer;
-         align-items: center;
-         border: 3px solid #333;
-         background: #add8e6;
-         box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  -moz-box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  -webkit-box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  -o-box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  border-radius:100px;
       }
       .buyoff{
-         width: 150px;
-         height: 120px;
-         border-radius: 50%;
-         overflow: hidden;
-         text-align: center;
-         display: flex;
          cursor: pointer;
-         justify-content: center;
-         align-items: center;
-         border: 3px solid #333;
-         background: #add8e6;
-         box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  -moz-box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  -webkit-box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  -o-box-shadow: 10px -10px  rgba(0,0,0,0.6);
-  border-radius:100px;
       }
+
+
+
+       @import "nib";
+
+
+
+.green {
+  margin-top: 15px;
+}
+.green .progress1,
+.red .progress1,
+.orange .progress1 {
+  position: relative;
+  border-radius: 50%;
+}
+.green .progress1,
+.red .progress1,
+.orange .progress1 {
+  width: 150px;
+  height: 150px;
+}
+.green .progress1 {
+  border: 5px solid #53fc53;
+}
+.green .progress1 {
+  box-shadow: 0 0 20px #029502;
+}
+.green .progress1,
+.red .progress1,
+.orange .progress1 {
+  transition: all 1s ease;
+}
+.green .progress1 .inner,
+.red .progress1 .inner,
+.orange .progress1 .inner {
+  position: absolute;
+  overflow: hidden;
+  z-index: 2;
+  border-radius: 50%;
+  background: #333;
+}
+.green .progress1 .inner,
+.red .progress1 .inner,
+.orange .progress1 .inner {
+  width: 140px;
+  height: 140px;
+}
+.green .progress1 .inner,
+.red .progress1 .inner,
+.orange .progress1 .inner {
+  border: 5px solid #1a1a1a;
+  /*border: 5px solid white;*/
+}
+.green .progress1 .inner,
+.red .progress1 .inner,
+.orange .progress1 .inner {
+  transition: all 1s ease;
+}
+.green .progress1 .inner .water,
+.red .progress1 .inner .water,
+.orange .progress1 .inner .water {
+  position: absolute;
+  z-index: 1;
+  width: 200%;
+  height: 200%;
+  left: -50%;
+  border-radius: 40%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: spin;
+}
+.green .progress1 .inner .water {
+  top: 25%;
+}
+.green .progress1 .inner .water {
+  /*background: rgba(83,252,83,0.5);*/
+  background: #00A2FF;
+}
+.green .progress1 .inner .water,
+.red .progress1 .inner .water,
+.orange .progress1 .inner .water {
+  transition: all 1s ease;
+}
+.green .progress1 .inner .water,
+.red .progress1 .inner .water,
+.orange .progress1 .inner .water {
+  animation-duration: 10s;
+}
+.green .progress1 .inner .water {
+  box-shadow: 0 0 20px #03bc03;
+}
+.green .progress1 .inner .glare,
+.red .progress1 .inner .glare,
+.orange .progress1 .inner .glare {
+  position: absolute;
+  top: -120%;
+  left: -120%;
+  z-index: 5;
+  width: 200%;
+  height: 200%;
+  transform: rotate(45deg);
+  border-radius: 50%;
+}
+.green .progress1 .inner .glare,
+.red .progress1 .inner .glare,
+.orange .progress1 .inner .glare {
+  background-color: rgba(255,255,255,0.15);
+}
+.green .progress1 .inner .glare,
+.red .progress1 .inner .glare,
+.orange .progress1 .inner .glare {
+  transition: all 1s ease;
+}
+.green .progress1 .inner .percent,
+.red .progress1 .inner .percent,
+.orange .progress1 .inner .percent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+.green .progress1 .inner .percent,
+.red .progress1 .inner .percent,
+.orange .progress1 .inner .percent {
+  line-height: 140px;
+  font-size: 45px;
+}
+.green .progress1 .inner .percent {
+  /*color: #03c603;*/
+  color: white;
+  z-index: 2;
+}
+.green .progress1 .inner .percent {
+  text-shadow: 0 0 10px #029502;
+}
+.green .progress1 .inner .percent,
+.red .progress1 .inner .percent,
+.orange .progress1 .inner .percent {
+  transition: all 1s ease;
+}
+.red {
+  margin-top: 15px;
+}
+.red .progress1 {
+  border: 5px solid #ed3b3b;
+}
+.red .progress1 {
+  box-shadow: 0 0 20px #7a0b0b;
+}
+.red .progress1 .inner .water {
+  top: 75%;
+}
+.red .progress1 .inner .water {
+  background: rgba(237,59,59,0.5);
+  /*background: #00A2FF;*/
+}
+.red .progress1 .inner .water {
+  box-shadow: 0 0 20px #9b0e0e;
+}
+.red .progress1 .inner .percent {
+  /*color: #a30f0f;*/
+  color: white;
+}
+.red .progress1 .inner .percent {
+  text-shadow: 0 0 10px #7a0b0b;
+}
+.orange {
+  margin-top: 15px;
+}
+.orange .progress1 {
+  border: 5px solid #f07c3e;
+}
+.orange .progress1 {
+  box-shadow: 0 0 20px #7e320a;
+}
+.orange .progress1 .inner .water {
+  top: 50%;
+}
+.orange .progress1 .inner .water {
+  background: rgba(240,124,62,0.5);
+}
+.orange .progress1 .inner .water {
+  box-shadow: 0 0 20px #a0400c;
+}
+.orange .progress1 .inner .percent {
+  /*color: #a8430d;*/
+  color: white;
+}
+.orange .progress1 .inner .percent {
+  text-shadow: 0 0 10px #7e320a;
+}
+
+
+@-moz-keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-o-keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+body {
+  background-color: #cce4f0;
+  width: 100vw;
+  height: 50vh;
+  position: relative;
+  /*overflow: hidden; */}
+
+.canvas {
+  position: relative;
+  width: 60vw;
+  height: 15vw;
+  margin: 0 auto;
+  top: 0%;
+  overflow: hidden; }
+
+.loading {
+  margin: 0 auto;
+  position: relative;
+  width: 80vw;
+  height: 20px;
+  top: 0%; }
+  .loading h1 {
+    width: 100%;
+    text-align: center;
+    color: red;
+    font-family: 'Arvo';
+    font-size: 30pt;
+    height: 100%;
+    letter-spacing: 6px; }
+
+.scrolling-area {
+  width: 100%;
+  height: 98%;
+  position: relative; }
+
+.ground {
+  width: 100%;
+  height: 2%;
+  z-index: 2;
+  position: relative;
+  background-color: black; }
+
+.rabbit-main {
+  width: 15%;
+  height: 60%;
+  margin: 0 auto;
+  transform: translate3d(0, 0, 0) !important;
+  position: relative;
+  z-index: 0; }
+  .rabbit-main .rabbit-body-part {
+    position: absolute;
+    background-color: #c41d1d; }
+
+.rabbit-main.rabbit-floor {
+  top: 40%; }
+  .rabbit-main.rabbit-floor .rabbit-body {
+    width: 60%;
+    height: 60%;
+    border-radius: 100%;
+    top: 35%;
+    left: 10%;
+    z-index: 2;
+    transform: translate3d(0, 0, 0) !important; }
+  .rabbit-main.rabbit-floor .rabbit-tail {
+    width: 13%;
+    height: 13%;
+    border-radius: 100%;
+    top: 80%;
+    left: 9%;
+    transform: translate3d(0, 0, 0) !important; }
+  .rabbit-main.rabbit-floor .rabbit-foot {
+    width: 31%;
+    height: 17%;
+    border-radius: 100%;
+    top: 88%;
+    left: 38%;
+    position: relative !important;
+    transform: translate3d(0, 0, 0) !important; }
+    .rabbit-main.rabbit-floor .rabbit-foot .foot-cover {
+      background-color: #cce4f0;
+      height: 75%;
+      width: 110%;
+      top: 40%;
+      position: relative !important;
+      z-index: 0 !important; }
+  .rabbit-main.rabbit-floor .rabbit-head {
+    width: 32%;
+    height: 32%;
+    border-radius: 100%;
+    top: 21%;
+    left: 52%;
+    z-index: 2 !important;
+    transform: translate3d(0, 0, 0) !important; }
+  .rabbit-main.rabbit-floor .rabbit-ear {
+    width: 36%;
+    height: 25%;
+    border-radius: 100%;
+    top: 0%;
+    left: 0%; }
+    .rabbit-main.rabbit-floor .rabbit-ear .ear-cover {
+      background-color: #cce4f0;
+      height: 65%;
+      width: 110%;
+      top: 40%;
+      position: relative !important;
+      z-index: 0 !important; }
+  .rabbit-main.rabbit-floor .rabbit-ear-1 {
+    transform: rotate(-146deg) translate3d(0, 0, 0);
+    left: 38%;
+    top: 8%;
+    animation: ear-1-twitch;
+    animation-duration: 1s;
+    animation-iteration-count: infinite; }
+  .rabbit-main.rabbit-floor .rabbit-ear-2 {
+    transform: rotate(-130deg) translate3d(0, 0, 0);
+    left: 45%;
+    top: 5%;
+    animation: ear-2-twitch;
+    animation-duration: 1s;
+    animation-iteration-count: infinite; }
+
+@keyframes ear-1-twitch {
+  0% {
+    transform: rotate(-146deg); }
+  25% {
+    transform: rotatate(-120deg); }
+  50% {
+    transform: rotate(-135deg); }
+  75% {
+    transform: rotate(-115deg); }
+  90% {
+    tranform: rotate(-146deg); } }
+
+@keyframes ear-2-twitch {
+  0% {
+    transform: rotate(-130deg); }
+  25% {
+    transform: rotatate(-110deg); }
+  50% {
+    transform: rotate(-120deg); }
+  75% {
+    transform: rotate(-115deg); }
+  90% {
+    transform: rotate(-146deg); } }
+
+.egg-outer.egg-1 {
+  transform: rotate(-20deg);
+  animation: egg-scroll linear;
+  animation-duration: 4s;
+  animation-iteration-count: infinite; }
+
+.egg-outer.egg-2 {
+  transform: rotate(35deg);
+  animation: egg-scroll linear;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s; }
+
+.egg-outer.egg-3 {
+  transform: rotate(-15deg);
+  animation: egg-scroll linear;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-delay: 2s; }
+
+.egg-outer.egg-4 {
+  transform: rotate(20deg);
+  animation: egg-scroll linear;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-delay: 3s; }
+
+.egg-outer {
+  width: 5%;
+  height: 30%;
+  background-color: red;
+  position: absolute;
+  left: 110%;
+  border-radius: 50%/60% 60% 40% 40%;
+  top: 70%;
+  overflow: hidden; }
+  .egg-outer .egg-line {
+    width: 120%;
+    height: 20%;
+    background-color: white; }
+  .egg-outer .egg-line-1 {
+    background-color: #f16565; }
+  .egg-outer .egg-line-2 {
+    background-color: #ffab61; }
+  .egg-outer .egg-line-3 {
+    background-color: #fffe70; }
+  .egg-outer .egg-line-4 {
+    background-color: #8aff70; }
+  .egg-outer .egg-line-5 {
+    background-color: #7072ff; }
+
+@keyframes egg-scroll {
+  0% {
+    left: 110%; }
+  40% {
+    left: 30%; }
+  60% {
+    left: 0%; }
+  61% {
+    left: -1%; }
+  65% {
+    left: -10%; }
+  100% {
+    left: -20%; } }
+
+.rabbit-main.rabbit-jump {
+  animation: rabbit-jump;
+  animation-duration: 1s;
+  animation-iteration-count: infinite; }
+  .rabbit-main.rabbit-jump .rabbit-head {
+    animation: rabbit-jump-head;
+    animation-duration: 1s;
+    animation-iteration-count: infinite; }
+  .rabbit-main.rabbit-jump .rabbit-foot {
+    animation: rabbit-jump-foot;
+    animation-duration: 1s;
+    animation-iteration-count: infinite; }
+  .rabbit-main.rabbit-jump .rabbit-body {
+    animation: rabbit-jump-body;
+    animation-duration: 1s;
+    animation-iteration-count: infinite; }
+  .rabbit-main.rabbit-jump .rabbit-tail {
+    animation: rabbit-jump-tail;
+    animation-duration: 1s;
+    animation-iteration-count: infinite; }
+  .rabbit-main.rabbit-jump .rabbit-ear-1 {
+    animation: rabbit-jump-ear-1;
+    animation-duration: 1s;
+    animation-iteration-count: infinite; }
+  .rabbit-main.rabbit-jump .rabbit-ear-2 {
+    animation: rabbit-jump-ear-2;
+    animation-duration: 1s;
+    animation-iteration-count: infinite; }
+
+@keyframes rabbit-jump {
+  0% {
+    top: 40%; }
+  30% {
+    top: 0%; }
+  100% {
+    top: 40%; } }
+
+@keyframes rabbit-jump-foot {
+  0% {
+    transform: rotate(0deg);
+    left: 38%;
+    top: 88%; }
+  10% {
+    transform: rotate(30deg);
+    left: 25%;
+    top: 94%; }
+  100% {
+    transform: rotate(0deg);
+    left: 38%;
+    top: 88%; } }
+
+@keyframes rabbit-jump-tail {
+  0% {
+    top: 80%;
+    left: 9%; }
+  5% {
+    top: 76%;
+    left: 6%; }
+  10% {
+    top: 73%;
+    left: 4.5%; }
+  15% {
+    top: 68%;
+    left: 3%; }
+  25% {
+    top: 64%;
+    left: 2%; }
+  40% {
+    top: 68%;
+    left: 3%; }
+  60% {
+    top: 73%;
+    left: 4.5%; }
+  80% {
+    top: 77%;
+    left: 6%; }
+  100% {
+    top: 80%;
+    left: 9%; } }
+
+@keyframes rabbit-jump-head {
+  0% {
+    top: 21%;
+    left: 52%; }
+  20% {
+    top: 28%;
+    left: 58%; }
+  100% {
+    top: 21%;
+    left: 52%; } }
+
+@keyframes rabbit-jump-ear-1 {
+  0% {
+    transform: rotate(-146deg) translate3d(0, 0, 0);
+    left: 38%;
+    top: 8%; }
+  10% {
+    transform: rotate(-150deg);
+    left: 40%;
+    top: 10%; }
+  100% {
+    transform: rotate(-146deg) translate3d(0, 0, 0);
+    left: 38%;
+    top: 8%; } }
+
+@keyframes rabbit-jump-ear-2 {
+  0% {
+    transform: rotate(-130deg) translate3d(0, 0, 0);
+    left: 45%;
+    top: 5%; }
+  10% {
+    transform: rotate(-140deg);
+    left: 43%;
+    top: 7%; }
+  100% {
+    transform: rotate(-130deg) translate3d(0, 0, 0);
+    left: 45%;
+    top: 5%; } }
+
+.dot-red {
+  color: yellow;
+  font-family: 'Arvo'; }
+
+.dot-yellow {
+  color: #00F020;
+  font-family: 'Arvo'; }
+
+.dot-green {
+  color: red;
+  font-family: 'Arvo'; }
    </style>
 </head>
 <body>
 
 	<section class="packages" id="packages">
 
-    <div style="width: 100%;height: 70px;">
+    <div style="width: 100%;height: 70px;position: fixed;">
         <h2><a href="../Controller/index.php?action=test2#book" style="font-size: 25px;" class="btn btn-success">Trang Chủ</a></h2>
         
        
     </div>
-     <div class="box-container" style="">
+
+
+
+    <div class="canvas">
+            <div class="scrolling-area">
+                <div class="rabbit-main rabbit-floor rabbit-jump">
+                    <div class="rabbit-body-part rabbit-body"></div>
+                    <div class="rabbit-body-part rabbit-tail"></div>
+                    <div class="rabbit-body-part rabbit-foot">
+                        <div class="foot-cover"></div>
+                    </div>
+                    <div class="rabbit-body-part rabbit-head"></div>
+                    <div class="rabbit-body-part rabbit-ear  rabbit-ear-1">
+                        <div class="ear-cover"></div>
+                    </div>
+                    <div class="rabbit-body-part rabbit-ear  rabbit-ear-2">
+                        <div class="ear-cover"></div>
+                    </div>
+                </div>
+                <div class="egg-outer egg-1">
+                    <div class="egg-line egg-line-1"></div>
+                    <div class="egg-line egg-line-2"></div>
+                    <div class="egg-line egg-line-3"></div>
+                    <div class="egg-line egg-line-4"></div>
+                    <div class="egg-line egg-line-5"></div>
+                </div>
+                <div class="egg-outer egg-2">
+                    <div class="egg-line egg-line-1"></div>
+                    <div class="egg-line egg-line-2"></div>
+                    <div class="egg-line egg-line-3"></div>
+                    <div class="egg-line egg-line-4"></div>
+                    <div class="egg-line egg-line-5"></div>
+                </div>
+                <div class="egg-outer egg-3">
+                    <div class="egg-line egg-line-1"></div>
+                    <div class="egg-line egg-line-2"></div>
+                    <div class="egg-line egg-line-3"></div>
+                    <div class="egg-line egg-line-4"></div>
+                    <div class="egg-line egg-line-5"></div>
+                </div>
+                <div class="egg-outer egg-4">
+                    <div class="egg-line egg-line-1"></div>
+                    <div class="egg-line egg-line-2"></div>
+                    <div class="egg-line egg-line-3"></div>
+                    <div class="egg-line egg-line-4"></div>
+                    <div class="egg-line egg-line-5"></div>
+                </div>
+            </div>
+            <div class="ground">
+            </div>
+        </div>
+        <div class="loading" id="loading">
+            <h1>LOADING</h1>
+        </div>
+
+<!--      <div class="box-container" style="">
         <div id="chartContainer" style="height: 400px; width: 100%;"></div>
      </div>
 
     <div>
-      <img src="../image/gif.gif" border="0" alt="Photobucket" height="200" width="250" id="ani" style="position: relative;top:-20px;z-index: -1;--g: <?php echo $tong-10; ?>vw;">
-    </div>
+      <img src="../image/gif.gif" border="0" alt="Photobucket" height="200" width="250" id="ani" style="position: relative;top:-20px;z-index: -1;--g: <?php echo $tong-5; ?>vw;">
+    </div> -->
      
-    <div style="width: 99vw;margin-top: -50px;">
+    <div style="width: 99vw;margin-top: 30px;">
       <div class="progress" style="">
         <div class="progress-bar" role="progressbar" aria-valuenow="<?php echo $tong; ?>" aria-valuemin="0" aria-valuemax="100" style="max-width: <?php echo $tong; ?>%">
         <span class="title" style="font-size:30px"><?php echo $tong; ?>%</span>
@@ -642,7 +1200,327 @@ chart.render();
 
 
   <div class="tiendo" >
+
      <div style="" class="dfm">
+      <h5 style="font-weight: bold;">
+        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[1]; ?>" style="text-decoration:none;">
+            <div class="green" id="green1">
+            <div class="progress1" id="progress1">
+              <div class="inner" id="inner1" 
+              >
+                <div class="percent" id="percent1"><span>23</span>%</div>
+                <div class="water" id="water1"></div>
+                <div class="glare" id="glare1"></div>
+              </div>
+            </div>
+          </div>
+          <?php $arraymay1 = array();
+              $a = 0;
+              foreach ($bophanline as $key1) {
+                $a++;
+                $arraymay1[$a] = $key1['tiendo'];
+
+            } 
+            $ch3 = substr($arraymay1[1], 0, -1);
+
+            ?>
+          <span><input type="hidden" id="percent-box" value="<?php 
+            echo $ch3; ?>">
+        </a>
+    </h5>
+    <div style="width: 7vw;text-align: center;">
+             <span style="font-weight:bold;font-size:20px;text-align:center;"><?php echo $datatiendo1['may1']; ?></span>
+         </div>
+</div>
+
+
+        <div style="" class="to2d">
+              <h5 style="font-weight: bold;">
+                <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[2]; ?>" style="text-decoration:none;">
+
+                    <div class="green" id="green2">
+                    <div class="progress1" id="progress2">
+                      <div class="inner" id="inner2">
+                        <div class="percent" id="percent2"><span><?php echo $chuoi2; ?></span>%</div>
+                        <div class="water" id="water2"></div>
+                        <div class="glare" id="glare2"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <?php $arraymay1 = array();
+              $a = 0;
+              foreach ($bophanline as $key1) {
+                $a++;
+                $arraymay1[$a] = $key1['tiendo'];
+
+            } 
+            $ch3 = substr($arraymay1[2], 0, -1);
+
+            ?>
+          <span><input type="hidden" id="percent-box2" value="<?php 
+            echo $ch3; ?>">
+        </span>
+         </a>
+                </h5>
+                <div style="width: 7vw;text-align: center;">
+             <span style="font-weight:bold;font-size:20px;text-align:center;"><?php echo $datatiendo1['may2']; ?></span>
+         </div>
+        </div>
+
+        <div style="" class="giacongvadathang">
+         <h5 style="font-weight: bold;"> 
+          <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[3]; ?>" style="text-decoration:none;">
+            <div class="green" id="green3">
+            <div class="progress1" id="progress3">
+              <div class="inner" id="inner3">
+                <div class="percent" id="percent3"><span><?php echo $chuoi3; ?></span>%</div>
+                <div class="water" id="water3"></div>
+                <div class="glare" id="glare3"></div>
+              </div>
+            </div>
+          </div>
+          <?php $arraymay1 = array();
+              $a = 0;
+              foreach ($bophanline as $key1) {
+                $a++;
+                $arraymay1[$a] = $key1['tiendo'];
+
+            } 
+            $ch3 = substr($arraymay1[3], 0, -1);
+
+            ?>
+          <span><input type="hidden" id="percent-box3" value="<?php 
+            echo $ch3; ?>">
+          </a>
+          </h5>
+          <div style="width: 7vw;text-align: center;">
+             <span style="font-weight:bold;font-size:20px;text-align:center;"><?php echo $datatiendo1['may3']; ?></span>
+         </div>
+      </div>
+      <div style="" class="lapdatvachinhmay">
+      <h5 style="font-weight: bold;"> 
+        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[4]; ?>" style="text-decoration:none;">
+            <div class="green" id="green4">
+            <div class="progress1" id="progress4">
+              <div class="inner">
+                <div class="percent" id="percent4"><span><?php echo $chuoi4; ?></span>%</div>
+                <div class="water" id="water4"></div>
+                <div class="glare" id="glare4"></div>
+              </div>
+            </div>
+          </div>
+          <?php $arraymay1 = array();
+              $a = 0;
+              foreach ($bophanline as $key1) {
+                $a++;
+                $arraymay1[$a] = $key1['tiendo'];
+
+            } 
+            $ch3 = substr($arraymay1[4], 0, -1);
+
+            ?>
+          <span><input type="hidden" id="percent-box4" value="<?php 
+            echo $ch3; ?>">
+        </a>
+        </h5>
+        <div style="width: 7vw;text-align: center;">
+             <span style="font-weight:bold;font-size:20px;text-align:center;"><?php echo $datatiendo1['may4']; ?></span>
+         </div>
+    </div>
+    <div style="" class="buyoff">
+      <h5 style="font-weight: bold;">
+        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[5]; ?>" style="text-decoration:none;">
+            <div class="green" id="green5">
+            <div class="progress1" id="progress5">
+              <div class="inner" id="inner5">
+                <div class="percent" id="percent5"><span><?php echo $chuoi5; ?></span>%</div>
+                <div class="water" id="water5"></div>
+                <div class="glare" id="glare5"></div>
+              </div>
+            </div>
+          </div>
+          <?php $arraymay1 = array();
+              $a = 0;
+              foreach ($bophanline as $key1) {
+                $a++;
+                $arraymay1[$a] = $key1['tiendo'];
+
+            } 
+            $ch3 = substr($arraymay1[5], 0, -1);
+
+            ?>
+          <span><input type="hidden" id="percent-box5" value="<?php 
+            echo $ch3; ?>">
+        </a>
+        </h5>
+        <div style="width: 7vw;text-align: center;">
+             <span style="font-weight:bold;font-size:20px;text-align:center;"><?php echo $datatiendo1['may5']; ?></span>
+         </div>
+    </div>
+    <div style="" class="buyoff">
+      <h5 style="font-weight: bold;">
+        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[6]; ?>" style="text-decoration:none;">
+            <div class="green" id="green6">
+            <div class="progress1" id="progress6">
+              <div class="inner" id="inner6">
+                <div class="percent" id="percent6"><span><?php echo $chuoi6; ?></span>%</div>
+                <div class="water" id="water6"></div>
+                <div class="glare" id="glare6"></div>
+              </div>
+            </div>
+          </div>
+          <?php $arraymay1 = array();
+              $a = 0;
+              foreach ($bophanline as $key1) {
+                $a++;
+                $arraymay1[$a] = $key1['tiendo'];
+
+            } 
+            $ch3 = substr($arraymay1[6], 0, -1);
+
+            ?>
+          <span><input type="hidden" id="percent-box6" value="<?php 
+            echo $ch3; ?>">
+        </a>
+        </h5>
+        <div style="width: 7vw;text-align: center;">
+             <span style="font-weight:bold;font-size:20px;text-align:center;"><?php echo $datatiendo1['may6']; ?></span>
+         </div>
+    </div>
+
+
+    <div style="" class="buyoff">
+      <h5 style="font-weight: bold;">
+        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[7]; ?>" style="text-decoration:none;">
+            <div class="green" id="green7">
+            <div class="progress1" id="progress7">
+              <div class="inner" id="inner7">
+                <div class="percent" id="percent7"><span><?php echo $chuoi7; ?></span>%</div>
+                <div class="water" id="water7"></div>
+                <div class="glare" id="glare7"></div>
+              </div>
+            </div>
+          </div>
+          <?php $arraymay1 = array();
+              $a = 0;
+              foreach ($bophanline as $key1) {
+                $a++;
+                $arraymay1[$a] = $key1['tiendo'];
+
+            } 
+            $ch3 = substr($arraymay1[7], 0, -1);
+
+            ?>
+          <span><input type="hidden" id="percent-box7" value="<?php 
+            echo $ch3; ?>">
+        </a>
+        </h5>
+        <div style="width: 7vw;text-align: center;">
+             <span style="font-weight:bold;font-size:20px;text-align:center;"><?php echo $datatiendo1['may7']; ?></span>
+         </div>
+    </div>
+
+
+    <div style="" class="buyoff">
+      <h5 style="font-weight: bold;">
+        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[8]; ?>" style="text-decoration:none;">
+            <div class="green" id="green8">
+            <div class="progress1" id="progress8">
+              <div class="inner" id="inner8">
+                <div class="percent" id="percent8"><span><?php echo $chuoi8; ?></span>%</div>
+                <div class="water" id="water8"></div>
+                <div class="glare" id="glare8"></div>
+              </div>
+            </div>
+          </div>
+          <?php $arraymay1 = array();
+              $a = 0;
+              foreach ($bophanline as $key1) {
+                $a++;
+                $arraymay1[$a] = $key1['tiendo'];
+
+            } 
+            $ch3 = substr($arraymay1[8], 0, -1);
+
+            ?>
+          <span><input type="hidden" id="percent-box8" value="<?php 
+            echo $ch3; ?>">
+        </a>
+        </h5>
+        <div style="width: 7vw;text-align: center;">
+             <span style="font-weight:bold;font-size:20px;text-align:center;"><?php echo $datatiendo1['may8']; ?></span>
+         </div>
+    </div>
+
+
+    <div style="" class="buyoff">
+      <h5 style="font-weight: bold;">
+        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[9]; ?>" style="text-decoration:none;">
+            <div class="green" id="green9">
+            <div class="progress1" id="progress9">
+              <div class="inner" id="inner9">
+                <div class="percent" id="percent9"><span><?php echo $chuoi9; ?></span>%</div>
+                <div class="water" id="water9"></div>
+                <div class="glare" id="glare9"></div>
+              </div>
+            </div>
+          </div>
+          <?php $arraymay1 = array();
+              $a = 0;
+              foreach ($bophanline as $key1) {
+                $a++;
+                $arraymay1[$a] = $key1['tiendo'];
+
+            } 
+            $ch3 = substr($arraymay1[9], 0, -1);
+
+            ?>
+          <span><input type="hidden" id="percent-box9" value="<?php 
+            echo $ch3; ?>">
+        </a>
+        </h5>
+        <div style="width: 7vw;text-align: center;">
+             <span style="font-weight:bold;font-size:20px;text-align:center;"><?php echo $datatiendo1['may9']; ?></span>
+         </div>
+    </div>
+
+
+
+
+    <div style="" class="buyoff">
+      <h5 style="font-weight: bold;">
+        <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[10]; ?>" style="text-decoration:none;">
+            <div class="green" id="green10">
+            <div class="progress1" id="progress10">
+              <div class="inner" id="inner10">
+                <div class="percent" id="percent10"><span></span>%</div>
+                <div class="water" id="water10"></div>
+                <div class="glare" id="glare10"></div>
+              </div>
+            </div>
+          </div>
+          <?php $arraymay1 = array();
+              $a = 0;
+              foreach ($bophanline as $key1) {
+                $a++;
+                $arraymay1[$a] = $key1['tiendo'];
+
+            } 
+            $ch3 = substr($arraymay1[10], 0, -1);
+
+            ?>
+          <span><input type="hidden" id="percent-box10" value="<?php 
+            echo $ch3; ?>">
+        </a>
+        </h5>
+        <div style="width: 7vw;text-align: center;">
+             <span style="font-weight:bold;font-size:20px;text-align:center;"><?php echo $datatiendo1['may10']; ?></span>
+         </div>
+    </div>
+    
+
+
+   <!--   <div style="" class="dfm">
       <h5 style="font-weight: bold;">
         <a href="../Controller/index.php?action=bieudoline1&id=<?php echo $c[1]; ?>" style="text-decoration:none;">
             <?php echo $datatiendo1['may1']; ?> <br> 
@@ -831,11 +1709,11 @@ chart.render();
               </span>
         </a>
       </h5>
-     </div>
+     </div> -->
 
 </div>
-      <div style="width: 100%; height: 600px;overflow-x: auto;overflow-y: 300px; margin-top: 10px;" class="table" id="tableselectdata" style="">
-        <div style="">
+      <div style="width: 100vw;">
+       <!--  <div style="">
             <h2 style="text-align: center;">Chi Tiết Tiến Độ <?php echo $datatiendo1['tenmay'];  ?></h2>
         </div>
         
@@ -883,64 +1761,48 @@ chart.render();
                         </tr>
                       </tbody>
          </table> 
-
-        <div>
-            <h2 style="text-align:center;margin-top: 1%;">Tổng Tiến Độ <?php echo $datatiendo1['tenmay'];  ?></h2>
-        </div>
-        
-            <table style=" width: 100%; margin-bottom: 20px;margin-top: 1%;" name="tabletable" id="idtable">
-                 <thead>
-            <tr style=" background: #ffed86;height: 50px;text-align:center;">
-                <th style="font-size: 20px;  width: 4px;border: 1px solid;">#</th>
-                <th style="font-size: 20px; width: 30px;border: 1px solid;">Tên Máy</th>    
-                <th style="font-size: 20px; width: 5px;border: 1px solid;">Tiến Độ</th>
-                <th style="font-size: 20px; width: 40px;border: 1px solid;">Ngày Bắt Đầu</th>
-                <th style="font-size: 20px; width: 5px;border: 1px solid;">Ngày Hoàn Thành</th>
-                <th style="font-size: 20px; width: 40px;border: 1px solid;">Ngày Dự Kiến</th>
-                <th style="font-size: 20px; width: 4px;border: 1px solid;">Số Giờ</th>
-                <th style="font-size: 20px; width: 4px;border: 1px solid;">Hiệu Suất</th>
-                <th style="font-size: 20px; width: 5px;border: 1px solid;">Bộ Phận</th>
-                <th style="font-size: 20px; width: 100px;border: 1px solid;">Thành Viên</th>
-                <th style="font-size: 20px; width: 50px;border: 1px solid;">Thông Tin</th>
-            </tr>
-        </thead>
+ -->
+        <div style="margin: 0 30px;height: 100vw;height: 35vh; box-shadow:7px 7px 15px rgba(121, 130, 160, 0.747);padding:30px;margin-top: 2%;border-radius: 30px;background: white;">
+                <table class="table" style="">
+              <thead>
+                <tr>
+                    <th style="" class="col-2">Tên Máy</th>    
+                    <th style="" class="col-1">Tiến Độ</th>
+                    <th style="line-height: 100px;" class="col-1">Ngày Bắt Đầu</th>
+                    <th style="line-height: 100px;" class="col-1">Ngày Dự Kiến</th>
+                    <th style="" class="col-1">Tổng Giờ</th>
+                    <th style="line-height: 100px;" class="col-1">Bộ Phận</th>
+                    <!-- <th style="line-height: 100px;" class="col-1">Thành Viên</th> -->
+                </tr>
+              </thead>
            <tbody>
+          
             <tr style="background: white;height: 50px;text-align:center;">
-                <td style='border: 1px solid;font-size: 20px; '>1</td>
-                <td style='border: 1px solid;font-size: 20px; '> <?php echo $dataID['tenmay']; ?></td>  
-                <td style='border: 1px solid;font-size: 20px;'><?php echo $tong.'%'; ?></td>
-                <td style='border: 1px solid;font-size: 20px;'><?php echo$dataID['ngaybatdau']; ?></td>
+                <td style=''> <?php echo $dataID['tenmay']; ?></td>  
+                <td style=''><?php echo $dataID['tiendo']; ?></td>
+                <td style=''><?php echo $dataID['ngaybatdau']; ?></td>
 
-                <?php if($tiendo1 == 100)
-                { 
-                ?>
-                <td style='border: 1px solid;font-size: 20px;'><?php echo $dataID['ngayhoanthanh']; ?></td>           
-                <?php
-                 }else{
-                ?>                
-                <td style='border: 1px solid;font-size: 20px;'>Chưa Hoàn Thành</td>
-                <?php } ?>
-
-                <td style='border: 1px solid;font-size: 20px; '><?php echo $dataID['ngaydukien']; ?></td>
-
-                 <?php if($tiendo1 == 100){ ?>
-                <td style='border: 1px solid;font-size: 20px; '><?php echo $hours+1; ?></td>
-                <?php }else{ ?>
-                <td style='border: 1px solid;font-size: 20px; '><?php echo $hours+1; ?></td>
-                <?php } ?>
-
+                <td style=''><?php echo $dataID['ngaydukien']; ?></td>
 
                 <?php if($tiendo1 == 100){ ?>
-                <td style='border: 1px solid; font-size: 20px;'><?php echo $dataID['hieusuat']; ?></td>
-                <?php }else{
-                ?>
-                <td style='border: 1px solid; font-size: 20px;'>Chưa Hoàn Thành</td>
+                <td style=''><?php echo $hours+1; ?></td>
+                <?php }else{ ?>
+                <td style=''><?php echo $hours+1; ?></td>
                 <?php } ?>
+                
+        
 
-                <td style='border: 1px solid;font-size: 20px; '><?php echo$dataID['bophan']; ?></td>
-                <td style='border: 1px solid;font-size: 20px; '><?php echo$dataID['nhomthuchien']; ?></td>
-                <td style='border: 1px solid;font-size: 20px; '>
+                
 
+
+                <td style='font-weight: bold;'><?php echo $dataID['bophan']; ?></td>
+                <!-- <td style=''><?php echo $dataID['nhomthuchien']; ?></td> -->
+
+
+
+
+                <!-- <td style='font-size: 20px; border: 1px solid; '>
+                    <a style="text-decoration: none;"data-bs-toggle="modal" data-bs-target="#exampleModal" href="" >Sửa</a>
                 <?php if($dataID['tiendo']=='100%')
                        {
                      ?> 
@@ -948,12 +1810,13 @@ chart.render();
                     <a style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#exampleModal1" href="" title="xóa">Xóa</a>
 
                  <?php } ?> 
-                </td>             
-            </tr>
+                </td>    -->    
 
+            </tr>
+           
             </tbody>
         </table>
-         
+          </div>
             
             </div>
 </section>
@@ -1389,6 +2252,608 @@ chart.render();
   </div>
 </div>
 </form>
+
+
+
+
+<script type="text/javascript">
+    var colorInc = 100 / 3;
+
+
+$(function()
+{
+  $("#percent-box").click(function()
+  {
+    $(this).select();
+  });
+  
+  $("#percent-box").ready(function()
+  {
+    var val = $("#percent-box").val();
+
+    
+    if(val != ""
+      && !isNaN(val)
+      && val <= 100
+      && val >= 0)
+    {
+      console.log(val);
+      
+      var valOrig = val;
+      val = 100 - val;
+      
+      if(valOrig == 0)
+      {
+        $("#percent-box").val(0);
+        $("#progress1 #percent1").text(0 + "%");
+      }
+      else $("#progress1 #percent1").text(valOrig + "%");
+      
+      $("#progress1").parent().removeClass();
+      $("#progress1 #water1").css("top", val + "%");
+      
+      if(valOrig < colorInc * 1)
+        $("#progress1").parent().addClass("red");
+      else if(valOrig < colorInc * 2)
+        $("#progress1").parent().addClass("orange");
+      else
+        $("#progress1").parent().addClass("green");
+    }
+    else
+    {
+      $("#progress1").parent().removeClass();
+      $("#progress1").parent().addClass("green");
+      $("#progress1 #water1").css("top", 100 - 67 + "%");
+      $("#progress1 #percent1").text(67 + "%");
+      $("#percent-box").val("");
+    }
+  });
+});
+
+  </script>
+
+  <script type="text/javascript">
+    var colorInc = 100 / 3;
+
+
+$(function()
+{
+  $("#percent-box2").click(function()
+  {
+    $(this).select();
+  });
+  
+  $("#percent-box2").ready(function()
+  {
+    var val = $("#percent-box2").val();
+
+    
+    if(val != ""
+      && !isNaN(val)
+      && val <= 100
+      && val >= 0)
+    {
+      console.log(val);
+      
+      var valOrig = val;
+      val = 100 - val;
+      
+      if(valOrig == 0)
+      {
+        $("#percent-box2").val(0);
+        $("#progress2 #percent2").text(0 + "%");
+      }
+      else $("#progress2 #percent2").text(valOrig + "%");
+      
+      $("#progress2").parent().removeClass();
+      $("#progress2 #water2").css("top", val + "%");
+      
+      if(valOrig < colorInc * 1)
+        $("#progress2").parent().addClass("red");
+      else if(valOrig < colorInc * 2)
+        $("#progress2").parent().addClass("orange");
+      else
+        $("#progress2").parent().addClass("green");
+    }
+    else
+    {
+      $("#progress2").parent().removeClass();
+      $("#progress2").parent().addClass("green");
+      $("#progress2 #water2").css("top", 100 - 67 + "%");
+      $("#progress2 #percent2").text(67 + "%");
+      $("#percent-box2").val("");
+    }
+  });
+});
+
+  </script>
+
+
+  <script type="text/javascript">
+    var colorInc = 100 / 3;
+
+
+$(function()
+{
+  $("#percent-box3").click(function()
+  {
+    $(this).select();
+  });
+  
+  $("#percent-box3").ready(function()
+  {
+    var val = $("#percent-box3").val();
+
+    
+    if(val != ""
+      && !isNaN(val)
+      && val <= 100
+      && val >= 0)
+    {
+      console.log(val);
+      
+      var valOrig = val;
+      val = 100 - val;
+      
+      if(valOrig == 0)
+      {
+        $("#percent-box3").val(0);
+        $("#progress3 #percent3").text(0 + "%");
+      }
+      else $("#progress3 #percent3").text(valOrig + "%");
+      
+      $("#progress3").parent().removeClass();
+      $("#progress3 #water3").css("top", val + "%");
+      
+      if(valOrig < colorInc * 1)
+        $("#progress3").parent().addClass("red");
+      else if(valOrig < colorInc * 2)
+        $("#progress3").parent().addClass("orange");
+      else
+        $("#progress3").parent().addClass("green");
+    }
+    else
+    {
+      $("#progress3").parent().removeClass();
+      $("#progress3").parent().addClass("green");
+      $("#progress3 #water3").css("top", 100 - 67 + "%");
+      $("#progress3 #percent3").text(67 + "%");
+      $("#percent-box3").val("");
+    }
+  });
+});
+
+  </script>
+
+
+    <script type="text/javascript">
+    var colorInc = 100 / 3;
+
+
+$(function()
+{
+  $("#percent-box4").click(function()
+  {
+    $(this).select();
+  });
+  
+  $("#percent-box4").ready(function()
+  {
+    var val = $("#percent-box4").val();
+
+    
+    if(val != ""
+      && !isNaN(val)
+      && val <= 100
+      && val >= 0)
+    {
+      console.log(val);
+      
+      var valOrig = val;
+      val = 100 - val;
+      
+      if(valOrig == 0)
+      {
+        $("#percent-box4").val(0);
+        $("#progress4 #percent4").text(0 + "%");
+      }
+      else $("#progress4 #percent4").text(valOrig + "%");
+      
+      $("#progress4").parent().removeClass();
+      $("#progress4 #water4").css("top", val + "%");
+      
+      if(valOrig < colorInc * 1)
+        $("#progress4").parent().addClass("red");
+      else if(valOrig < colorInc * 2)
+        $("#progress4").parent().addClass("orange");
+      else
+        $("#progress4").parent().addClass("green");
+    }
+    else
+    {
+      $("#progress4").parent().removeClass();
+      $("#progress4").parent().addClass("green");
+      $("#progress4 #water4").css("top", 100 - 67 + "%");
+      $("#progress4 #percent4").text(67 + "%");
+      $("#percent-box4").val("");
+    }
+  });
+});
+
+  </script>
+ 
+
+
+   <script type="text/javascript">
+    var colorInc = 100 / 3;
+
+
+$(function()
+{
+  $("#percent-box5").click(function()
+  {
+    $(this).select();
+  });
+  
+  $("#percent-box5").ready(function()
+  {
+    var val = $("#percent-box5").val();
+
+    
+    if(val != ""
+      && !isNaN(val)
+      && val <= 100
+      && val >= 0)
+    {
+      console.log(val);
+      
+      var valOrig = val;
+      val = 100 - val;
+      
+      if(valOrig == 0)
+      {
+        $("#percent-box5").val(0);
+        $("#progress5 #percent5").text(0 + "%");
+      }
+      else $("#progress5 #percent5").text(valOrig + "%");
+      
+      $("#progress5").parent().removeClass();
+      $("#progress5 #water5").css("top", val + "%");
+      
+      if(valOrig < colorInc * 1)
+        $("#progress5").parent().addClass("red");
+      else if(valOrig < colorInc * 2)
+        $("#progress5").parent().addClass("orange");
+      else
+        $("#progress5").parent().addClass("green");
+    }
+    else
+    {
+      $("#progress5").parent().removeClass();
+      $("#progress5").parent().addClass("green");
+      $("#progress5 #water5").css("top", 100 - 67 + "%");
+      $("#progress5 #percent5").text(67 + "%");
+      $("#percent-box5").val("");
+    }
+  });
+});
+
+  </script>
+
+
+
+    </script>
+ 
+
+
+   <script type="text/javascript">
+    var colorInc = 100 / 3;
+
+
+$(function()
+{
+  $("#percent-box6").click(function()
+  {
+    $(this).select();
+  });
+  
+  $("#percent-box6").ready(function()
+  {
+    var val = $("#percent-box6").val();
+
+    
+    if(val != ""
+      && !isNaN(val)
+      && val <= 100
+      && val >= 0)
+    {
+      console.log(val);
+      
+      var valOrig = val;
+      val = 100 - val;
+      
+      if(valOrig == 0)
+      {
+        $("#percent-box6").val(0);
+        $("#progress6 #percent6").text(0 + "%");
+      }
+      else $("#progress6 #percent6").text(valOrig + "%");
+      
+      $("#progress6").parent().removeClass();
+      $("#progress6 #water6").css("top", val + "%");
+      
+      if(valOrig < colorInc * 1)
+        $("#progress6").parent().addClass("red");
+      else if(valOrig < colorInc * 2)
+        $("#progress6").parent().addClass("orange");
+      else
+        $("#progress6").parent().addClass("green");
+    }
+    else
+    {
+      $("#progress6").parent().removeClass();
+      $("#progress6").parent().addClass("green");
+      $("#progress6 #water6").css("top", 100 - 67 + "%");
+      $("#progress6 #percent6").text(67 + "%");
+      $("#percent-box6").val("");
+    }
+  });
+});
+
+  </script>
+
+
+
+    </script>
+ 
+
+
+   <script type="text/javascript">
+    var colorInc = 100 / 3;
+
+
+$(function()
+{
+  $("#percent-box7").click(function()
+  {
+    $(this).select();
+  });
+  
+  $("#percent-box7").ready(function()
+  {
+    var val = $("#percent-box7").val();
+
+    
+    if(val != ""
+      && !isNaN(val)
+      && val <= 100
+      && val >= 0)
+    {
+      console.log(val);
+      
+      var valOrig = val;
+      val = 100 - val;
+      
+      if(valOrig == 0)
+      {
+        $("#percent-box7").val(0);
+        $("#progress7 #percent7").text(0 + "%");
+      }
+      else $("#progress7 #percent7").text(valOrig + "%");
+      
+      $("#progress7").parent().removeClass();
+      $("#progress7 #water7").css("top", val + "%");
+      
+      if(valOrig < colorInc * 1)
+        $("#progress7").parent().addClass("red");
+      else if(valOrig < colorInc * 2)
+        $("#progress7").parent().addClass("orange");
+      else
+        $("#progress7").parent().addClass("green");
+    }
+    else
+    {
+      $("#progress7").parent().removeClass();
+      $("#progress7").parent().addClass("green");
+      $("#progress7 #water7").css("top", 100 - 67 + "%");
+      $("#progress7 #percent7").text(67 + "%");
+      $("#percent-box7").val("");
+    }
+  });
+});
+
+  </script>
+
+
+
+
+  </script>
+ 
+
+
+   <script type="text/javascript">
+    var colorInc = 100 / 3;
+
+
+$(function()
+{
+  $("#percent-box8").click(function()
+  {
+    $(this).select();
+  });
+  
+  $("#percent-box8").ready(function()
+  {
+    var val = $("#percent-box8").val();
+
+    
+    if(val != ""
+      && !isNaN(val)
+      && val <= 100
+      && val >= 0)
+    {
+      console.log(val);
+      
+      var valOrig = val;
+      val = 100 - val;
+      
+      if(valOrig == 0)
+      {
+        $("#percent-box8").val(0);
+        $("#progress8 #percent8").text(0 + "%");
+      }
+      else $("#progress8 #percent8").text(valOrig + "%");
+      
+      $("#progress8").parent().removeClass();
+      $("#progress8 #water8").css("top", val + "%");
+      
+      if(valOrig < colorInc * 1)
+        $("#progress8").parent().addClass("red");
+      else if(valOrig < colorInc * 2)
+        $("#progress8").parent().addClass("orange");
+      else
+        $("#progress8").parent().addClass("green");
+    }
+    else
+    {
+      $("#progress8").parent().removeClass();
+      $("#progress8").parent().addClass("green");
+      $("#progress8 #water8").css("top", 100 - 67 + "%");
+      $("#progress8 #percent8").text(67 + "%");
+      $("#percent-box8").val("");
+    }
+  });
+});
+
+  </script>
+
+
+
+  </script>
+ 
+
+
+   <script type="text/javascript">
+    var colorInc = 100 / 3;
+
+
+$(function()
+{
+  $("#percent-box9").click(function()
+  {
+    $(this).select();
+  });
+  
+  $("#percent-box9").ready(function()
+  {
+    var val = $("#percent-box9").val();
+
+    
+    if(val != ""
+      && !isNaN(val)
+      && val <= 100
+      && val >= 0)
+    {
+      console.log(val);
+      
+      var valOrig = val;
+      val = 100 - val;
+      
+      if(valOrig == 0)
+      {
+        $("#percent-box9").val(0);
+        $("#progress9 #percent9").text(0 + "%");
+      }
+      else $("#progress9 #percent9").text(valOrig + "%");
+      
+      $("#progress9").parent().removeClass();
+      $("#progress9 #water9").css("top", val + "%");
+      
+      if(valOrig < colorInc * 1)
+        $("#progress9").parent().addClass("red");
+      else if(valOrig < colorInc * 2)
+        $("#progress9").parent().addClass("orange");
+      else
+        $("#progress9").parent().addClass("green");
+    }
+    else
+    {
+      $("#progress9").parent().removeClass();
+      $("#progress9").parent().addClass("green");
+      $("#progress9 #water9").css("top", 100 - 67 + "%");
+      $("#progress9 #percent9").text(67 + "%");
+      $("#percent-box9").val("");
+    }
+  });
+});
+
+  </script>
+
+
+
+  </script>
+ 
+
+
+   <script type="text/javascript">
+    var colorInc = 100 / 3;
+
+
+$(function()
+{
+  $("#percent-box10").click(function()
+  {
+    $(this).select();
+  });
+  
+  $("#percent-box10").ready(function()
+  {
+    var val = $("#percent-box10").val();
+
+    
+    if(val != ""
+      && !isNaN(val)
+      && val <= 100
+      && val >= 0)
+    {
+      console.log(val);
+      
+      var valOrig = val;
+      val = 100 - val;
+      
+      if(valOrig == 0)
+      {
+        $("#percent-box10").val(0);
+        $("#progress10 #percent10").text(0 + "%");
+      }
+      else $("#progress10 #percent10").text(valOrig + "%");
+      
+      $("#progress10").parent().removeClass();
+      $("#progress10 #water10").css("top", val + "%");
+      
+      if(valOrig < colorInc * 1)
+        $("#progress10").parent().addClass("red");
+      else if(valOrig < colorInc * 2)
+        $("#progress10").parent().addClass("orange");
+      else
+        $("#progress10").parent().addClass("green");
+    }
+    else
+    {
+      $("#progress10").parent().removeClass();
+      $("#progress10").parent().addClass("green");
+      $("#progress10 #water10").css("top", 100 - 67 + "%");
+      $("#progress10 #percent10").text(67 + "%");
+      $("#percent-box10").val("");
+    }
+  });
+});
+
+  </script>
+
+
+
+
 <script type="text/javascript">
     document.getElementById("submitmay11").addEventListener("click", myFunction);
 
@@ -1620,6 +3085,51 @@ function myFunction() {
 
 
 </script>
+
+
+
+
+        <script type="text/javascript">
+          //For adding dots to loading
+window.onload = function(){
+    var loading = document.getElementById("loading");
+    
+    function addRedDot(i){
+        i.innerHTML = "<h1>LOADING<span class='dot-red'>.</span></h1>";
+        }
+        function addYellowDot(i){
+        i.innerHTML = "<h1>LOADING<span class='dot-red'>.</span><span class='dot-yellow'>.</span></h1>";
+        }
+        function addGreenDot(i){
+        i.innerHTML = "<h1>LOADING<span class='dot-red'>.</span><span class='dot-yellow'>.</span><span class='dot-green'>.</span></h1>";
+        }
+        function removeDots(i) {
+        i.innerHTML = "<h1>LOADING</h1>";
+        }
+    
+    function timedDots(i) {
+    
+        setTimeout(function(){
+            addRedDot(i)
+        }, 1000);
+        setTimeout(function(){
+            addYellowDot(i)
+        }, 2000);
+        setTimeout(function(){
+            addGreenDot(i)
+        }, 3000);
+        setTimeout(function(){
+            removeDots(i)
+        }, 4000);
+        
+        }
+    
+    setInterval(function(){
+        timedDots(loading)
+    }, 4000);
+}
+
+        </script>
 
 
 </body>

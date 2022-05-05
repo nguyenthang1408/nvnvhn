@@ -612,7 +612,13 @@
      font-size: 50px;
      height: 120px;
      justify-content: center;
+     color: #1656f0;
+     font-size: 50px;
+     justify-content: center;
 }
+.app .tiles .tile:nth-child(2) h2{
+	  height: 120px;
+	}
 .app .tiles .tile:nth-child(2) span{
      font-weight: bold;
      margin-left: 7px;

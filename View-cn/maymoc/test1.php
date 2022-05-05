@@ -6,7 +6,7 @@
    <title></title>
    <style type="text/css">
       @property --p{
-  syntax: '<number>';
+  /*syntax: '<number>';*/
   inherits: true;
   initial-value: 0;
 }
@@ -59,9 +59,9 @@
   from{--p:0}
 }
 
-body {
+/*body {
   background:#ddd;
-}
+}*/
    </style>
 </head>
 <body>
