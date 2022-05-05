@@ -71,7 +71,6 @@ $thanghientai = date("n");
 $namhientai = date("Y");
 
 
-        $tablee = 'tiendoline';
         $table100 = 'tiendomaymoc';
         $tiendomaymoc1 = 'tiendomaymoc1';
         $tenmay = $dataID['tenmay'];
@@ -82,6 +81,7 @@ $namhientai = date("Y");
 
         $tablee1 = 'tiendoquydinhline';
         $datatiendo1 = $db->getDatatiendo1($tablee1,$tenmay,$ngaybatdau);
+
       
         $a = array(10);
         $b = 0;

@@ -519,7 +519,7 @@
 	position: relative;
 	top: -250px;
 	float: right;
-	right: 45px;
+	right: 35px;
 	font-size: 25px;
 }
 .tiles .tile .loading{
@@ -531,7 +531,7 @@
 	margin-top: 25px;
 	position: relative;
 	color: #1656f0;
-	right: 45px;
+	right: 35px;
 	font-size: 25px;
 	top: -250px;
 	float: right;
@@ -607,13 +607,13 @@
 }
 .app .tiles .tile:nth-child(2) h2 a{
 	 float: left;
-	 margin-left: 18px;
+	 margin-left: 12px;
      color: #1656f0;
      font-size: 50px;
      height: 120px;
      justify-content: center;
      color: #1656f0;
-     font-size: 50px;
+     font-size: 45px;
      justify-content: center;
 }
 .app .tiles .tile:nth-child(2) h2{
@@ -629,9 +629,9 @@
 	}
 .app .tiles .tile:nth-child(3) h2 a{
 	 float: left;
-	 margin-left: 18px;
+	 margin-left: 12px;
      color: #1656f0;
-     font-size: 50px;
+     font-size: 45px;
      height: 120px;
      justify-content: center;
      color: #1656f0;
@@ -645,13 +645,13 @@
 }
 .app .tiles .tile:nth-child(4) h2 a{
      float: left;
-     margin-left: 18px;
+     margin-left: 12px;
      color: #1656f0;
      font-size: 50px;
      height: 120px;
      justify-content: center;
      color: #1656f0;
-     font-size: 50px;
+     font-size: 45px;
      justify-content: center;
 }
 .app .tiles .tile:nth-child(4) span{
@@ -660,8 +660,8 @@
      color: black;
 }
 .table tr td{
-     margin-left: 20px;
-     padding-left: 20px;
+     /* margin-left: 20px;
+     padding-left: 20px; */
      float: left;
 }
  .tile:hover {

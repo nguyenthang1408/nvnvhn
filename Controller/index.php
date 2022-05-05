@@ -237,7 +237,10 @@ switch ($action) {
 		require_once('../View/maymoc/addchart.php');
 		break;
 	}
-
+	case 'table-attendance':{
+		require_once('../View/maymoc/table-attendance.php');
+		break;
+	}
 	//china
 
 
@@ -473,6 +476,10 @@ switch ($action) {
 	}
 	case 'te':{
 		require_once('../View/maymoc/te.php');
+		break;
+	}
+	case 'table-attendance-cn':{
+		require_once('../View-cn/maymoc/table-attendance.php');
 		break;
 	}
 }

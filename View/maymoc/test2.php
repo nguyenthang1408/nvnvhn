@@ -442,12 +442,12 @@ $tonggg = substr($tongg, 0, -1);
 							</div>
 							<div class="loading" style="">
 								<h4>
-									<span style="font-weight: bold;"><a  href="../Controller/index.php?action=projectloading">Đang Thực Hiện: <?php echo $ab; ?></a></span>
+									<span style="font-weight: bold;"><a  href="../Controller/index.php?action=projectloading">Đang Làm: <?php echo $ab; ?></a></span>
 								</h4>
 							</div>
 							<div class="loading" style="margin-top:27px">
 								<h4>
-									<span style="font-weight: bold;"><a  href="../Controller/index.php?action=projectdone">Đã Hoàn Thành: <?php echo $counttong - $ab; ?></a></span>
+									<span style="font-weight: bold;"><a  href="../Controller/index.php?action=projectdone">Hoàn Thành: <?php echo $counttong - $ab; ?></a></span>
 								</h4>
 							</div>
 						</article>
@@ -511,7 +511,11 @@ $tonggg = substr($tongg, 0, -1);
 							  		?>
 							     <tr>
 							      <th style="color: red;color: black;border-bottom: none;" scope="row"><div style="width: 120px;height: 30px;text-overflow: ellipsis;overflow: hidden; text-align: left;white-space: nowrap;"><a class="mobile" style="color: black;" href="../Controller/index.php?action=bieudoline&id=<?php echo $value['id']; ?>"> <?php echo $value['tenmay'] ?> </a></div></th>
-							      <td style="color: black;border-bottom: none;"><?php echo $value['tiendo']; ?></td>
+							      <td style="color: black;border-bottom: none;">
+								  <?php
+								  $chuoi1 = substr($value['tiendo'], 0, -1);
+								   echo floor($chuoi1).'%';
+								    ?></td>
 							    </tr>
 
 
@@ -519,7 +523,12 @@ $tonggg = substr($tongg, 0, -1);
 
 							    <tr>
 							      <th scope="row" style="color: black;border-bottom: none;"><div style="width: 120px;height: 30px;text-overflow: ellipsis;overflow: hidden; text-align: left;white-space: nowrap;"> <a style="color: black;" href="../Controller/index.php?action=bieudo&id=<?php echo $value['id']; ?>"> <?php echo $value['tenmay'] ?></a></th>
-							      <td style="color: black;border-bottom: none;"><?php echo $value['tiendo']; ?></div></td>
+							      <td style="color: black;border-bottom: none;">
+								  <?php $chuoi2 = substr($value['tiendo'], 0, -1);
+								   echo floor($chuoi2).'%';
+								    ?>
+									</div>
+									</td>
 							    </tr>
 							    <?php } } }?>
 
@@ -579,7 +588,7 @@ $tonggg = substr($tongg, 0, -1);
 			</section>
     
 <div style="" class="diemdanh">
-				<div style="" class="diemdanh1">
+				<div onclick="pcsh2()" style="" class="diemdanh1">
 								<div class="sum" style="height:50px; text-align: center; color: #1656f0;  font-weight: bold; ">
 									<h3>
 										<span style="font-weight: bold;font-weight: 700px; font-size: 40px;">Điểm danh trong ngày</span>
@@ -704,6 +713,11 @@ window.location="../Controller/index.php?action=usermanager&page=1";
 <script type="text/javascript">
 	function pcsh1() {
 		window.location.href = './index.php?action=addchart#';
+	}
+</script>
+<script type="text/javascript">
+	function pcsh2() {
+		window.location.href = './index.php?action=table-attendance#';
 	}
 </script>
  <script src="../plugins/jquery-2.2.4.min.js"></script>
@@ -891,17 +905,28 @@ echo "['".$rows["type_leave"]."', ".$rows["type_leave_no"]."],";
 		]);
 
 		// Optional; add a title and set the width and height of the chart
-		var options = {colors: ['#131685', '#34C79F'] ,backgroundColor: '#c7deff',chartArea:{height:"280",width:"740"},height:"380",width:"100%",vAxis: {
-            minValue: 0,
-            maxValue: 100,
-            format: '#\'%\''
-        } ,  animation: {
-          duration: 500,
-          easing: 'out',
-          startup: true
-      	},
-		legend: {position: 'bottom',alignment: 'center'}};
-
+		var options = {	trendlines: {
+							0: {type: 'linear', lineWidth: 5, opacity: .3},
+							1: {type: 'exponential', lineWidth: 10, opacity: .3}
+							},
+							colors: ['#131685', '#34C79F'] ,backgroundColor: '#c7deff',chartArea:{height:"280",width:"700"},height:"380",width:"800",vAxis: {
+							format: '#\'%\''
+						} ,  animation: {
+						duration: 500,
+						easing: 'out',
+						startup: true
+						},
+						legend: {position: 'bottom',alignment: 'center'},
+						series: {
+									0: {targetAxisIndex: 0},
+									1: {targetAxisIndex: 1}
+								},
+						vAxes: {
+						
+							0: {title: 'Đi làm', textStyle: {color: '#131685', bold: true}},
+							1: {title: 'Nghỉ làm', textStyle: {color: '#34C79F', bold: true}}
+						},
+					}
 		// Display the chart inside the <div> element with id="piechart"
 		var chart = new google.visualization.ColumnChart(document.getElementById('columnchart'));
 		chart.draw(data, options);

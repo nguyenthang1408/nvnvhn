@@ -1500,7 +1500,7 @@ body {
           </div>
          <span><input type="hidden" id="percent-box" value="<?php echo $chuoi1; ?>"></span>
          <div style="width: 7vw;text-align: center;">
-             <span style="font-weight:bold;font-size:25px;text-align:center;">DFM</span>
+             <span style="font-weight:bold;font-size:22px;text-align:center;">DFM</span>
          </div>
      </div>
 
@@ -1516,7 +1516,7 @@ body {
           </div>
           <span><input type="hidden" id="percent-box2" value="<?php echo $chuoi2; ?>"></span>
           <div style="width: 7vw;text-align: center;">
-             <span style="font-weight:bold;font-size:25px;text-align:center;">3DTO2D</span>
+             <span style="font-weight:bold;font-size:22px;text-align:center;">3DTO2D</span>
          </div>
      </div>
 
@@ -1532,7 +1532,7 @@ body {
           </div>
           <span><input type="hidden" id="percent-box3" value="<?php echo $chuoi3; ?>"></span>
           <div style="width: 7vw;text-align: center;">
-             <span style="font-weight:bold;font-size:23px;text-align:center;">Gia Công,ĐH</span>
+             <span style="font-weight:bold;font-size:20px;text-align:center;">Gia Công,ĐH</span>
          </div>
      </div>
 
@@ -1548,7 +1548,7 @@ body {
           </div>
           <span><input type="hidden" id="percent-box4" value="<?php echo $chuoi4; ?>"></span>
           <div style="width: 7vw;text-align: center;">
-             <span style="font-weight:bold;font-size:23px;text-align:center;">Lắp Đặt,CM</span>
+             <span style="font-weight:bold;font-size:20px;text-align:center;">Lắp Đặt,CM</span>
          </div>
      </div>
 
@@ -1564,7 +1564,7 @@ body {
           </div>
           <span><input type="hidden" id="percent-box5" value="<?php echo $chuoi5; ?>"></span>
           <div style="width: 7vw;text-align: center;">
-             <span style="font-weight:bold;font-size:25px;text-align:center;">Buyoff</span>
+             <span style="font-weight:bold;font-size:22px;text-align:center;">Buyoff</span>
          </div>
      </div>
 

@@ -2,7 +2,7 @@
 	/*overflow-y: auto;*/
 }
 .packages .table thead th{
-	font-size: 17px;
+	font-size: 15px;
 }
 .packages .table thead th:nth-child(3){
 	line-height: 100px;

@@ -1330,7 +1330,7 @@ body {
           </div>
          <span><input type="hidden" id="percent-box" value="<?php echo $chuoi1; ?>"></span>
          <div style="width: 7vw;text-align: center;">
-             <span style="font-weight:bold;font-size:25px;text-align:center;">DFM</span>
+             <span style="font-weight:bold;font-size:20px;text-align:center;">DFM</span>
          </div>
      </div>
 
@@ -1346,7 +1346,7 @@ body {
           </div>
           <span><input type="hidden" id="percent-box2" value="<?php echo $chuoi2; ?>"></span>
           <div style="width: 7vw;text-align: center;">
-             <span style="font-weight:bold;font-size:25px;text-align:center;">3DTO2D</span>
+             <span style="font-weight:bold;font-size:20px;text-align:center;">3DTO2D</span>
          </div>
      </div>
 
@@ -1362,7 +1362,7 @@ body {
           </div>
           <span><input type="hidden" id="percent-box3" value="<?php echo $chuoi3; ?>"></span>
           <div style="width: 7vw;text-align: center;">
-             <span style="font-weight:bold;font-size:23px;text-align:center;">Gia Công,ĐH</span>
+             <span style="font-weight:bold;font-size:20px;text-align:center;">Gia Công,ĐH</span>
          </div>
      </div>
 
@@ -1378,7 +1378,7 @@ body {
           </div>
           <span><input type="hidden" id="percent-box4" value="<?php echo $chuoi4; ?>"></span>
           <div style="width: 7vw;text-align: center;">
-             <span style="font-weight:bold;font-size:23px;text-align:center;">Lắp Đặt,CM</span>
+             <span style="font-weight:bold;font-size:20px;text-align:center;">Lắp Đặt,CM</span>
          </div>
      </div>
 
@@ -1394,7 +1394,7 @@ body {
           </div>
           <span><input type="hidden" id="percent-box5" value="<?php echo $chuoi5; ?>"></span>
           <div style="width: 7vw;text-align: center;">
-             <span style="font-weight:bold;font-size:25px;text-align:center;">Buyoff</span>
+             <span style="font-weight:bold;font-size:20px;text-align:center;">Buyoff</span>
          </div>
      </div>
 
@@ -1419,7 +1419,7 @@ body {
 
       <div style="width: 100vw;">
         
-          <div style="margin: 0 30px;height: 100vw;height: 49vh; box-shadow:7px 7px 15px rgba(121, 130, 160, 0.747);padding:30px;margin-top: 1.4%;border-radius: 30px;background: white;">
+          <div style="margin: 0 30px;height: 100vw;height: 55vh; box-shadow:7px 7px 15px rgba(121, 130, 160, 0.747);padding:30px;margin-top: 1.4%;border-radius: 30px;background: white;">
                 <table class="table" style="">
               <thead>
                 <tr>

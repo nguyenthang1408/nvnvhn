@@ -71,7 +71,7 @@ $thanghientai = date("n");
 $namhientai = date("Y");
 
 
-        $tablee = 'tiendoline';
+ 
         $table100 = 'tiendomaymoc';
         $tiendomaymoc1 = 'tiendomaymoc1';
         $tenmay = $dataID['tenmay'];

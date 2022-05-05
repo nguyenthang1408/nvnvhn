@@ -4,7 +4,7 @@
 
 }
 .packages .table thead th{
-	font-size: 25px; 
+	font-size: 20px; 
 	border-radius: 20px 20px 0 0;
 	text-align: center;
 	border: 3px solid white;
@@ -63,27 +63,27 @@
 	line-height: 40px;
 }
 .packages .table tbody tr td:nth-child(1){
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: bold;
 	line-height: 100px;
 }
 .packages .table tbody tr td:nth-child(2){
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: bold;
 	line-height: 100px;
 }
 .packages .table tbody tr td:nth-child(3){
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: bold;
 	line-height: 100px;
 }
 .packages .table tbody tr td:nth-child(4){
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: bold;
 	line-height: 100px;
 }
 .packages .table tbody tr td:nth-child(5){
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: bold;
 	line-height: 100px;
 }
@@ -92,7 +92,7 @@
 	font-weight: bold;
 }
 .packages .table tbody tr td:nth-child(6) button{
-	font-size: 25px;
+	font-size: 20px;
 }
 .packages .table tbody tr td:nth-child(7){
 	line-height: 100px;
